@@ -1,5 +1,11 @@
 #pragma once
 
+#include <vector>
+#include <memory>
+#include "shader.h"
+
+// #include <glm/vec3.hpp>
+
 namespace WhineEngine
 {
   class Mesh
@@ -7,13 +13,15 @@ namespace WhineEngine
   public:
     unsigned int m_VAO;
     unsigned int m_VBO;
-    // unsigned int m_EBO;
-    unsigned int shaderProgram;
+    unsigned int m_EBO;
+    // unsigned int shaderProgram;
 
     Mesh();
+    // Mesh(std::vector<glm::vec3> positions, std::vector<unsigned int> indices);
     ~Mesh();
 
     void Update();
   private:
+    std::unique_ptr<Shader> shader;
   };
 }

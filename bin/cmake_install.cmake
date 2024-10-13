@@ -36,6 +36,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glfw/cmake_install.cmake")
   include("C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glad/cmake_install.cmake")
+  include("C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glm/cmake_install.cmake")
   include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/cmake_install.cmake")
   include("C:/Users/elipe/OneDrive/Desktop/Project/bin/game/cmake_install.cmake")
 

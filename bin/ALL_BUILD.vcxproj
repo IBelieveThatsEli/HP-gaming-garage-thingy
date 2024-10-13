@@ -189,6 +189,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{9B4E0F3F-32B2-3FBE-80EB-B81BDA19AFDE}</Project>
       <Name>glfw</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\libs\glm\glm\glm.vcxproj">
+      <Project>{DA038934-C509-3293-B197-8FACE558F30E}</Project>
+      <Name>glm</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\mesh\mesh.vcxproj">
       <Project>{18686FC8-BE3E-30AC-A65D-9C85C13FDE1B}</Project>
       <Name>mesh</Name>
@@ -196,6 +200,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\scene\scene.vcxproj">
       <Project>{B23BDB11-71F5-3686-98A6-E2C47312F9BA}</Project>
       <Name>scene</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\shading\shading.vcxproj">
+      <Project>{39D8AD7E-1CB1-30B4-901C-E70E94ABE820}</Project>
+      <Name>shading</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\win\win.vcxproj">
       <Project>{60079253-66FE-3EB8-B4F9-E2BFD4304FA6}</Project>

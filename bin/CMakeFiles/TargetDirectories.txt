@@ -10,6 +10,10 @@ C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glfw/src/CMakeFiles/INSTALL.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glfw/docs/CMakeFiles/INSTALL.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glad/CMakeFiles/glad.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glad/CMakeFiles/INSTALL.dir
+C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glm/CMakeFiles/INSTALL.dir
+C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glm/CMakeFiles/ALL_BUILD.dir
+C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glm/glm/CMakeFiles/glm.dir
+C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glm/glm/CMakeFiles/INSTALL.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/CMakeFiles/INSTALL.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/engine/CMakeFiles/engine.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/engine/CMakeFiles/INSTALL.dir
@@ -19,5 +23,7 @@ C:/Users/elipe/OneDrive/Desktop/Project/bin/src/mesh/CMakeFiles/mesh.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/mesh/CMakeFiles/INSTALL.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/scene/CMakeFiles/scene.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/scene/CMakeFiles/INSTALL.dir
+C:/Users/elipe/OneDrive/Desktop/Project/bin/src/shading/CMakeFiles/shading.dir
+C:/Users/elipe/OneDrive/Desktop/Project/bin/src/shading/CMakeFiles/INSTALL.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/game/CMakeFiles/game.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/game/CMakeFiles/INSTALL.dir

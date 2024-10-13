@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED true)
 
 add_subdirectory(libs/glfw)
 add_subdirectory(libs/glad)
+add_subdirectory(libs/glm)
 
 add_subdirectory(src)
 
