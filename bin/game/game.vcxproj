@@ -86,6 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -104,9 +105,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -114,7 +116,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\libs\glfw\src\Debug\glfw3.lib;..\libs\glad\Debug\glad.lib;..\src\win\Debug\win.lib;..\src\engine\Debug\engine.lib;..\src\mesh\Debug\mesh.lib;..\src\scene\Debug\scene.lib;..\libs\glfw\src\Debug\glfw3.lib;..\src\mesh\Debug\mesh.lib;..\libs\glad\Debug\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -129,6 +131,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -147,9 +150,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -157,7 +161,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\libs\glfw\src\Release\glfw3.lib;..\libs\glad\Release\glad.lib;..\src\win\Release\win.lib;..\src\engine\Release\engine.lib;..\src\mesh\Release\mesh.lib;..\src\scene\Release\scene.lib;..\libs\glfw\src\Release\glfw3.lib;..\src\mesh\Release\mesh.lib;..\libs\glad\Release\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -172,6 +176,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -190,9 +195,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -200,7 +206,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\libs\glfw\src\MinSizeRel\glfw3.lib;..\libs\glad\MinSizeRel\glad.lib;..\src\win\MinSizeRel\win.lib;..\src\engine\MinSizeRel\engine.lib;..\src\mesh\MinSizeRel\mesh.lib;..\src\scene\MinSizeRel\scene.lib;..\libs\glfw\src\MinSizeRel\glfw3.lib;..\src\mesh\MinSizeRel\mesh.lib;..\libs\glad\MinSizeRel\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -215,6 +221,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -232,9 +239,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\game\main.h;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\game\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\win;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\engine;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\mesh;C:\Users\elipe\OneDrive\Desktop\Project\game\..\src\scene;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\src\win\Window.h;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\win\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\engine\app.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\mesh.h;C:\Users\elipe\OneDrive\Desktop\Project\src\mesh\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\scene.h;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\..\mesh;C:\Users\elipe\OneDrive\Desktop\Project\src\scene\libs\glad;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -242,7 +250,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\libs\glfw\src\RelWithDebInfo\glfw3.lib;..\libs\glad\RelWithDebInfo\glad.lib;..\src\win\RelWithDebInfo\win.lib;..\src\engine\RelWithDebInfo\engine.lib;..\src\mesh\RelWithDebInfo\mesh.lib;..\src\scene\RelWithDebInfo\scene.lib;..\libs\glfw\src\RelWithDebInfo\glfw3.lib;..\src\mesh\RelWithDebInfo\mesh.lib;..\libs\glad\RelWithDebInfo\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -321,6 +329,30 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\engine\engine.vcxproj">
+      <Project>{4C099D59-9D86-39C6-A9E5-83507EF9D71F}</Project>
+      <Name>engine</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\libs\glad\glad.vcxproj">
+      <Project>{22E2ABD4-4829-3398-8756-BA0E37D180C7}</Project>
+      <Name>glad</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\libs\glfw\src\glfw.vcxproj">
+      <Project>{9B4E0F3F-32B2-3FBE-80EB-B81BDA19AFDE}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\mesh\mesh.vcxproj">
+      <Project>{18686FC8-BE3E-30AC-A65D-9C85C13FDE1B}</Project>
+      <Name>mesh</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\scene\scene.vcxproj">
+      <Project>{B23BDB11-71F5-3686-98A6-E2C47312F9BA}</Project>
+      <Name>scene</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\win\win.vcxproj">
+      <Project>{60079253-66FE-3EB8-B4F9-E2BFD4304FA6}</Project>
+      <Name>win</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

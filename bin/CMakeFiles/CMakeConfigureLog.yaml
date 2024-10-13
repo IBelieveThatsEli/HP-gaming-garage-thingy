@@ -285,3 +285,183 @@ events:
       Microsoft (R) Incremental Linker Version 14.39.33522.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/elipe/Downloads/cmake-3.29.0-rc4-windows-x86_64/cmake-3.29.0-rc4-windows-x86_64/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Users/elipe/Downloads/cmake-3.29.0-rc4-windows-x86_64/cmake-3.29.0-rc4-windows-x86_64/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "C:/Users/elipe/Downloads/cmake-3.29.0-rc4-windows-x86_64/cmake-3.29.0-rc4-windows-x86_64/share/cmake-3.29/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Users/elipe/Downloads/cmake-3.29.0-rc4-windows-x86_64/cmake-3.29.0-rc4-windows-x86_64/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "libs/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-iqdxuf"
+      binary: "C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-iqdxuf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/elipe/OneDrive/Desktop/Project/libs/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-iqdxuf'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_4f35e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 2024/10/13 09:12:29.
+        
+        Project "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-iqdxuf\\cmTC_4f35e.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_4f35e.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-iqdxuf\\Debug\\".
+          Creating directory "cmTC_4f35e.dir\\Debug\\cmTC_4f35e.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_4f35e.dir\\Debug\\cmTC_4f35e.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_4f35e.dir\\Debug\\cmTC_4f35e.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4f35e.dir\\Debug\\\\" /Fd"cmTC_4f35e.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-iqdxuf\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33522 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_4f35e.dir\\Debug\\\\" /Fd"cmTC_4f35e.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-iqdxuf\\src.c"
+          src.c
+        C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-iqdxuf\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-iqdxuf\\cmTC_4f35e.vcxproj]
+        Done Building Project "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-iqdxuf\\cmTC_4f35e.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-iqdxuf\\cmTC_4f35e.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-iqdxuf\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-iqdxuf\\cmTC_4f35e.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.91
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/elipe/Downloads/cmake-3.29.0-rc4-windows-x86_64/cmake-3.29.0-rc4-windows-x86_64/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Users/elipe/Downloads/cmake-3.29.0-rc4-windows-x86_64/cmake-3.29.0-rc4-windows-x86_64/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Users/elipe/Downloads/cmake-3.29.0-rc4-windows-x86_64/cmake-3.29.0-rc4-windows-x86_64/share/cmake-3.29/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "libs/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-6az6d9"
+      binary: "C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-6az6d9"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/elipe/OneDrive/Desktop/Project/libs/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-6az6d9'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_62219.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 2024/10/13 09:12:31.
+        
+        Project "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-6az6d9\\cmTC_62219.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_62219.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-6az6d9\\Debug\\".
+          Creating directory "cmTC_62219.dir\\Debug\\cmTC_62219.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_62219.dir\\Debug\\cmTC_62219.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_62219.dir\\Debug\\cmTC_62219.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_62219.dir\\Debug\\\\" /Fd"cmTC_62219.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-6az6d9\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33522 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_62219.dir\\Debug\\\\" /Fd"cmTC_62219.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-6az6d9\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-6az6d9\\Debug\\cmTC_62219.exe" /INCREMENTAL /ILK:"cmTC_62219.dir\\Debug\\cmTC_62219.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-6az6d9/Debug/cmTC_62219.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-6az6d9/Debug/cmTC_62219.lib" /MACHINE:X64  /machine:x64 cmTC_62219.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-6az6d9\\cmTC_62219.vcxproj]
+        Done Building Project "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-6az6d9\\cmTC_62219.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-6az6d9\\cmTC_62219.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-6az6d9\\cmTC_62219.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.82
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Users/elipe/Downloads/cmake-3.29.0-rc4-windows-x86_64/cmake-3.29.0-rc4-windows-x86_64/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "C:/Users/elipe/Downloads/cmake-3.29.0-rc4-windows-x86_64/cmake-3.29.0-rc4-windows-x86_64/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Users/elipe/Downloads/cmake-3.29.0-rc4-windows-x86_64/cmake-3.29.0-rc4-windows-x86_64/share/cmake-3.29/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "libs/glfw/CMakeLists.txt:60 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-nqduub"
+      binary: "C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-nqduub"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/elipe/OneDrive/Desktop/Project/libs/glfw/CMake/modules"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-nqduub'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9a6cf.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.9.5+33de0b227 for .NET Framework
+        Build started 2024/10/13 09:12:32.
+        
+        Project "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-nqduub\\cmTC_9a6cf.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_9a6cf.dir\\Debug\\".
+          Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
+          Creating directory "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-nqduub\\Debug\\".
+          Creating directory "cmTC_9a6cf.dir\\Debug\\cmTC_9a6cf.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_9a6cf.dir\\Debug\\cmTC_9a6cf.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_9a6cf.dir\\Debug\\cmTC_9a6cf.tlog\\unsuccessfulbuild".
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9a6cf.dir\\Debug\\\\" /Fd"cmTC_9a6cf.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-nqduub\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.39.33522 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9a6cf.dir\\Debug\\\\" /Fd"cmTC_9a6cf.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-nqduub\\CheckFunctionExists.c"
+          CheckFunctionExists.c
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-nqduub\\Debug\\cmTC_9a6cf.exe" /INCREMENTAL /ILK:"cmTC_9a6cf.dir\\Debug\\cmTC_9a6cf.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-nqduub/Debug/cmTC_9a6cf.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/CMakeScratch/TryCompile-nqduub/Debug/cmTC_9a6cf.lib" /MACHINE:X64  /machine:x64 cmTC_9a6cf.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-nqduub\\cmTC_9a6cf.vcxproj]
+        Done Building Project "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-nqduub\\cmTC_9a6cf.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-nqduub\\cmTC_9a6cf.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\elipe\\OneDrive\\Desktop\\Project\\bin\\CMakeFiles\\CMakeScratch\\TryCompile-nqduub\\cmTC_9a6cf.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.70
+        
+      exitCode: 1
+...

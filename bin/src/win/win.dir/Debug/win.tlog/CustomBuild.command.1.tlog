@@ -1,0 +1,10 @@
+^C:\USERS\ELIPE\ONEDRIVE\DESKTOP\PROJECT\SRC\WIN\CMAKELISTS.TXT
+setlocal
+C:\Users\elipe\Downloads\cmake-3.29.0-rc4-windows-x86_64\cmake-3.29.0-rc4-windows-x86_64\bin\cmake.exe -SC:/Users/elipe/OneDrive/Desktop/Project -BC:/Users/elipe/OneDrive/Desktop/Project/bin --check-stamp-file C:/Users/elipe/OneDrive/Desktop/Project/bin/src/win/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,4 @@
+add_subdirectory(engine)
+add_subdirectory(win)
+add_subdirectory(mesh)
+add_subdirectory(scene)
