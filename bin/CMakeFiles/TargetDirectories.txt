@@ -1,0 +1,3 @@
+C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/ALL_BUILD.dir
+C:/Users/elipe/OneDrive/Desktop/Project/bin/CMakeFiles/ZERO_CHECK.dir
+C:/Users/elipe/OneDrive/Desktop/Project/bin/game/CMakeFiles/game.dir
