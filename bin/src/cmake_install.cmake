@@ -39,6 +39,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/mesh/cmake_install.cmake")
   include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/scene/cmake_install.cmake")
   include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/shading/cmake_install.cmake")
+  include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/texture/cmake_install.cmake")
 
 endif()
 

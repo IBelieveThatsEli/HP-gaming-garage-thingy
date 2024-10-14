@@ -6,9 +6,11 @@ target_include_directories(mesh PUBLIC
   mesh.h
   libs/glad
   ../shading
+  ../texture
 )
 
 target_link_libraries(mesh PUBLIC 
   glad
   shading
+  texture
 )

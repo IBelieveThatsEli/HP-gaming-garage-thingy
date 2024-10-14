@@ -3,6 +3,7 @@
 #include <vector>
 #include <memory>
 #include "shader.h"
+#include "texture.h"
 
 // #include <glm/vec3.hpp>
 
@@ -23,5 +24,6 @@ namespace WhineEngine
     void Update();
   private:
     std::unique_ptr<Shader> shader;
+    std::unique_ptr<Texture> texture;
   };
 }

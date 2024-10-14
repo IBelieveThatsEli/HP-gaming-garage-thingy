@@ -5,22 +5,29 @@ target_include_directories(game PRIVATE
   libs/glfw
   libs/glad
   libs/glm
+  libs/stb
   ../src/win
   ../src/engine
   ../src/mesh
   ../src/scene
   ../src/shading
-)
+  ../src/texture
+  )
+  # ../src/shader
+  # ../src/texture
   # src/engine
 
 target_link_libraries(game PRIVATE
   glfw
   glad
   glm
+  stb
   win
   engine
   mesh
   scene
   shading
+  texture
 )
+  # shading
   # PRIVATE engine
