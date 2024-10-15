@@ -24,6 +24,8 @@ namespace WhineEngine
     void SetTitle(std::string_view title) { m_title = title; }
 
     bool IsWindowOpen() const { return !glfwWindowShouldClose(m_window); }
+
+    float AspectRatio() { return static_cast<float>(m_width) / m_height; }
   private:
     static Window *m_instance;
 

@@ -2,7 +2,7 @@
 
 #include <string>
 
-// #include <glm/glm.hpp>
+#include <glm/mat4x4.hpp>
 
 namespace WhineEngine
 {
@@ -28,7 +28,7 @@ namespace WhineEngine
     //void SetVectorArray (std::string location, int size, const std::vector<math::vec4>& values);
     //void SetMatrix      (std::string location, math::mat2 value);
     //void SetMatrix      (std::string location, math::mat3 value);
-    //void SetMatrix      (std::string location, math::mat4 value);
+    void SetMatrix      (std::string location, glm::mat4 value);
     //void SetMatrixArray (std::string location, int size, math::mat2* values);
     //void SetMatrixArray (std::string location, int size, math::mat3* values);
     //void SetMatrixArray (std::string location, int size, math::mat4* values);

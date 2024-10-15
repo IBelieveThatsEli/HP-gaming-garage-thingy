@@ -345,6 +345,9 @@ GLM_FORCE_PURE:BOOL=OFF
 //Use MSVC runtime library DLL
 USE_MSVC_RUNTIME_LIBRARY_DLL:BOOL=ON
 
+//Dependencies for the target
+camera_LIB_DEPENDS:STATIC=general;glm;general;shading;general;win;
+
 //Value Computed by CMake
 glm_BINARY_DIR:STATIC=C:/Users/elipe/OneDrive/Desktop/Project/bin/libs/glm
 
@@ -367,13 +370,13 @@ project_IS_TOP_LEVEL:STATIC=ON
 project_SOURCE_DIR:STATIC=C:/Users/elipe/OneDrive/Desktop/Project
 
 //Dependencies for the target
-scene_LIB_DEPENDS:STATIC=general;mesh;general;glad;
+scene_LIB_DEPENDS:STATIC=general;mesh;general;glad;general;glm;general;camera;
 
 //Dependencies for the target
 shader_LIB_DEPENDS:STATIC=general;glad;
 
 //Dependencies for the target
-shading_LIB_DEPENDS:STATIC=general;glad;
+shading_LIB_DEPENDS:STATIC=general;glad;general;glm;
 
 //Dependencies for the target
 texture_LIB_DEPENDS:STATIC=general;glad;general;stb;
@@ -504,7 +507,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MT
 CMAKE_MT-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=16
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=17
 //Platform information initialized
 CMAKE_PLATFORM_INFO_INITIALIZED:INTERNAL=1
 //noop for ranlib

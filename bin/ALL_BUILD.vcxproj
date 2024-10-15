@@ -173,6 +173,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\camera\camera.vcxproj">
+      <Project>{E38F7AB5-E1BE-3A0D-A931-0320C77B844B}</Project>
+      <Name>camera</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\engine\engine.vcxproj">
       <Project>{4C099D59-9D86-39C6-A9E5-83507EF9D71F}</Project>
       <Name>engine</Name>

@@ -21,7 +21,11 @@ namespace WhineEngine
     // Mesh(std::vector<glm::vec3> positions, std::vector<unsigned int> indices);
     ~Mesh();
 
+    void UpdateShading();
+
     void Update();
+
+    Shader &GetShader() { return *shader; }
   private:
     std::unique_ptr<Shader> shader;
     std::unique_ptr<Texture> texture;

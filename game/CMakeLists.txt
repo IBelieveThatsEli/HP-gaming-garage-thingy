@@ -12,10 +12,8 @@ target_include_directories(game PRIVATE
   ../src/scene
   ../src/shading
   ../src/texture
-  )
-  # ../src/shader
-  # ../src/texture
-  # src/engine
+  ../src/camera
+)
 
 target_link_libraries(game PRIVATE
   glfw
@@ -28,6 +26,5 @@ target_link_libraries(game PRIVATE
   scene
   shading
   texture
+  camera
 )
-  # shading
-  # PRIVATE engine

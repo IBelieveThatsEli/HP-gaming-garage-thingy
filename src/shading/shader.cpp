@@ -1,6 +1,7 @@
 #include "shader.h"
 
 #include <glad/glad.h>
+#include <glm/gtc/type_ptr.hpp>
 
 #include <iostream>
 #include <fstream>
@@ -94,4 +95,10 @@ void Shader::Load(const std::string &vsPath, const std::string &fsPath)
 void Shader::Use()
 {
   glUseProgram(m_id);
+}
+
+void Shader::SetMatrix(std::string location, glm::mat4 value) 
+{
+  int modelLoc = glGetUniformLocation(m_id, location.c_str());
+  glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(value));
 }
