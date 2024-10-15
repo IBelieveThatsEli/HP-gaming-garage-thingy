@@ -1,3 +1,10 @@
+/*
+
+  CREATED: ELI PEFFER
+  FOR: HP GAME JAM
+
+*/
+
 #include "mesh.h"
 
 #include <glad/glad.h>
@@ -11,100 +18,28 @@
 
 using namespace WhineEngine;
 
+// ============================================================================== //
 Mesh::Mesh()
-{
-  // float vertices[] = {
-  //   -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-  //    0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-  //    0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-  //    0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-  //   -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-  //   -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-
-  //   -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-  //    0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-  //    0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-  //    0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-  //   -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-  //   -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-
-  //   -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-  //   -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-  //   -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-  //   -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-  //   -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-  //   -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
-  //    0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-  //    0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-  //    0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-  //    0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-  //    0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-  //    0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-
-  //   -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-  //    0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-  //    0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-  //    0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-  //   -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-  //   -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-
-  //   -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-  //    0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-  //    0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-  //    0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-  //   -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-  //   -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
-  // };
-
-  // glGenVertexArrays(1, &m_VAO);
-
-  // glGenBuffers(1, &m_VBO);
-  // // glGenBuffers(1, &m_EBO);
-  
-  // glBindVertexArray(m_VAO);
-
-  // glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
-  // glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-  // // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
-  // // glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-  // glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-  // glEnableVertexAttribArray(0);  
-
-  // glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-  // glEnableVertexAttribArray(1);
-
-  // shader = std::make_unique<Shader>("../res/shaders/default.vs", "../res/shaders/default.fs");
-
-  // glm::mat4 model = glm::mat4(1.0f);
-  // model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-
-  // shader->Use();
-  // shader->SetMatrix("model", model);
-
-  // texture = std::make_unique<Texture>("../res/textures/container.jpg");
-}
-
+{}
+// ============================================================================== //
 Mesh::Mesh(const std::vector<glm::vec3> &vertices) :
   m_vertices{vertices}
 {}
-    
+// ============================================================================== //    
 Mesh::Mesh(const std::vector<glm::vec3> &vertices, const std::vector<std::uint32_t> &indices) :
   m_vertices{vertices},
   m_indices{indices}
 {}
-
+// ============================================================================== //
 Mesh::~Mesh()
 {
-  texture = nullptr;
-  shader = nullptr;
+  m_texture = nullptr;
+  m_shader = nullptr;
   glDeleteVertexArrays(1, &m_VAO);
   glDeleteBuffers(1, &m_VBO);
   // glDeleteBuffers(1, &m_EBO);
 }
-
+// ============================================================================== //
 void Mesh::CreateBuffers()
 {
   std::vector<float> data;
@@ -128,6 +63,7 @@ void Mesh::CreateBuffers()
   glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
   std::cout << data.size();
   glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(float), data.data(), GL_STATIC_DRAW);
+  // TODO test if ebo has values...
   // glBufferData(GL_ARRAY_BUFFER, data.size(), data.data(), GL_STATIC_DRAW);
 
   // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
@@ -139,41 +75,52 @@ void Mesh::CreateBuffers()
   glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (GLvoid*)(3 * sizeof(float)));
   glEnableVertexAttribArray(1);
 
-  shader = std::make_unique<Shader>("../res/shaders/default.vs", "../res/shaders/default.fs");
+  // TODO: default shader btw
+  m_shader = std::make_unique<Shader>("../res/shaders/default.vs", "../res/shaders/default.fs");
 
-  glm::mat4 model = glm::mat4(1.0f);
-  model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+  m_model = glm::mat4(1.0f);
+  // model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 
-  glm::mat4 view = glm::mat4(1.0f);
-  view  = glm::translate(view, glm::vec3(0.0f, 0.0f, -4.0f));
+  m_shader->Use();
+  m_shader->SetMatrix("model", m_model);
 
-  glm::mat4 projection = glm::mat4(1.0f);
-  projection = glm::perspective(glm::radians(45.0f), 800.0f/600.0f, 0.1f, 100.0f);
-
-  shader->Use();
-  shader->SetMatrix("model", model);
-  shader->SetMatrix("view", view);
-  shader->SetMatrix("projection", projection);
-
-  texture = std::make_unique<Texture>("../res/textures/container.jpg");
+  m_texture = std::make_unique<Texture>("../res/textures/container.jpg");
 }
-
-void Mesh::UpdateShading()
+// ============================================================================== //
+void Mesh::UseShading()
 {
-  texture->Use();
-  shader->Use();
-  glBindVertexArray(m_VAO);
+  m_texture->Use();
+  m_shader->Use();
 }
-
+// ============================================================================== //
+void Mesh::UseBuffer()
+{
+glBindVertexArray(m_VAO);
+}
+// ============================================================================== //
 void Mesh::Update()
 {
-  texture->Use();
-  shader->Use();
-  glBindVertexArray(m_VAO);
   glDrawArrays(GL_TRIANGLES, 0, 36);
 }
-
+// ============================================================================== //
+// set rotation? is this a good name...
 void Mesh::SetOrientation(float deg, const glm::vec3 &axis) 
 {
   m_model = glm::rotate(m_model, glm::radians(deg), axis);
+  m_shader->SetMatrix("model", m_model);
 }
+// ============================================================================== //
+void Mesh::SetPosition(const glm::vec3 &position)
+{
+  m_position = position;
+  m_model = glm::translate(m_model, position);
+  m_shader->SetMatrix("model", m_model);
+}
+// ============================================================================== //
+void Mesh::SetScale(const glm::vec3 &scale)
+{
+  m_scale = scale;
+  m_model = glm::scale(m_model, scale);
+  m_shader->SetMatrix("model", m_model);
+}
+// ============================================================================== //

@@ -1,6 +1,9 @@
 #pragma once
 
 #include <glm/vec3.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 #include "shader.h"
 
@@ -19,9 +22,9 @@ namespace WhineEngine
 
     void SetPosition(const glm::vec3 &position) { m_position = position; }
 
-    void updateMatrix(float FOVdeg, float nearPlane, float farPlane);
+    void SetCamMatrix(float FOVdeg, float nearPlane, float farPlane);
 
-    void Matrix(Shader &shader, const char *uniform);
+    void UpdateMatrix(Shader &shader, const char *uniform);
 
     // void Input(GLFWwindow *window);
 

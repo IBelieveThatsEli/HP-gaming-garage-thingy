@@ -7,13 +7,15 @@
 #include <fstream>
 #include <sstream>
 
+#include <string>
+
 using namespace WhineEngine;
 
 namespace Read
 {
-  std::string FileContents(const std::string &filePath)
+  std::string FileContents(const std::string_view filePath)
   {
-    std::ifstream in(filePath.c_str(), std::ios::in | std::ios::binary);
+    std::ifstream in(filePath.data(), std::ios::in | std::ios::binary);
     if (!in)
     {
       std::cout << "FAILED TO OPEN FILE\n";
@@ -31,7 +33,7 @@ Shader::Shader()
   Load("../res/shaders/vert.glsl", "../res/shaders/vert.glsl");
 }
 
-Shader::Shader(const std::string &vsPath, const std::string &fsPath)
+Shader::Shader(const std::string_view vsPath, const std::string_view fsPath)
 {
   Load(vsPath, fsPath);
 }
@@ -41,10 +43,10 @@ Shader::~Shader()
   glDeleteShader(m_id);
 }
 
-void Shader::Load(const std::string &vsPath, const std::string &fsPath)
+void Shader::Load(const std::string_view vsPath, const std::string_view fsPath)
 {
-  std::string vsCode = Read::FileContents(vsPath.c_str());
-  std::string fsCode = Read::FileContents(fsPath.c_str());
+  std::string vsCode = Read::FileContents(vsPath);
+  std::string fsCode = Read::FileContents(fsPath);
 
   const char *vertCode = vsCode.c_str();
   const char *fragCode = fsCode.c_str();
@@ -97,8 +99,8 @@ void Shader::Use()
   glUseProgram(m_id);
 }
 
-void Shader::SetMatrix(std::string location, glm::mat4 value) 
+void Shader::SetMatrix(std::string_view location, glm::mat4 value) 
 {
-  int modelLoc = glGetUniformLocation(m_id, location.c_str());
+  int modelLoc = glGetUniformLocation(m_id, location.data());
   glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(value));
 }

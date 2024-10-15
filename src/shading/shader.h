@@ -1,6 +1,6 @@
 #pragma once
 
-#include <string>
+#include <string_view>
 
 #include <glm/mat4x4.hpp>
 
@@ -10,10 +10,10 @@ namespace WhineEngine
   {
   public:
     Shader();
-    Shader(const std::string &vsPath, const std::string &fsPath);
+    Shader(const std::string_view vsPath, const std::string_view fsPath);
     ~Shader();
 
-    void Load(const std::string &vsPath, const std::string &fsPath);
+    void Load(const std::string_view vsPath, const std::string_view fsPath);
 
     void Use();
 
@@ -28,7 +28,7 @@ namespace WhineEngine
     //void SetVectorArray (std::string location, int size, const std::vector<math::vec4>& values);
     //void SetMatrix      (std::string location, math::mat2 value);
     //void SetMatrix      (std::string location, math::mat3 value);
-    void SetMatrix      (std::string location, glm::mat4 value);
+    void SetMatrix      (std::string_view location, glm::mat4 value);
     //void SetMatrixArray (std::string location, int size, math::mat2* values);
     //void SetMatrixArray (std::string location, int size, math::mat3* values);
     //void SetMatrixArray (std::string location, int size, math::mat4* values);

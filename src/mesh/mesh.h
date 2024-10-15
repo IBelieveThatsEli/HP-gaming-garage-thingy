@@ -1,3 +1,10 @@
+/*
+
+  CREATED: ELI PEFFER
+  FOR: HP GAME JAM
+
+*/
+
 #pragma once
 
 #include <vector>
@@ -24,6 +31,8 @@ namespace WhineEngine
     std::vector<std::uint32_t> m_indices;
   public:
     Mesh();
+    // THE LAYOUT OF THE MESH CONSTRUCTOR WILL ULTIMATELY BE DECIDED BY THE
+    // WAY OBJ OR FBX FILES ARE SAVED
     Mesh(const std::vector<glm::vec3> &vertices);
     Mesh(const std::vector<glm::vec3> &vertices, const std::vector<std::uint32_t> &indices);
     
@@ -31,31 +40,32 @@ namespace WhineEngine
 
     void CreateBuffers();
 
-    void UpdateShading();
-
     void Update();
 
-    Shader &GetShader() { return *shader; }
+    void UseShading();
+    void UseBuffer();
+
+    Shader &GetShader() { return *m_shader; }
 
     const glm::vec3 &GetPosition() const { return m_position; }
     
-    void SetPosition(const glm::vec3 &position) { m_position = position; }
+    void SetPosition(const glm::vec3 &position);
     
-    const glm::vec3 &GetSize() { return m_size; }
+    const glm::vec3 &GetSale() { return m_scale; }
     
-    void SetSize(const glm::vec3 &size) {  m_size = size; }
+    void SetScale(const glm::vec3 &scale);
 
     void SetOrientation(float deg, const glm::vec3 &axis);
   private:
-    std::unique_ptr<Shader> shader;
-    std::unique_ptr<Texture> texture;
+    std::unique_ptr<Shader>   m_shader;
+    std::unique_ptr<Texture>  m_texture;
 
     unsigned int m_VAO;
     unsigned int m_VBO;
     unsigned int m_EBO;
 
     glm::vec3 m_position;
-    glm::vec3 m_size;
+    glm::vec3 m_scale;
     glm::mat4 m_model;
   };
 }
