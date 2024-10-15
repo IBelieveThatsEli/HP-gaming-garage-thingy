@@ -358,7 +358,7 @@ glm_IS_TOP_LEVEL:STATIC=OFF
 glm_SOURCE_DIR:STATIC=C:/Users/elipe/OneDrive/Desktop/Project/libs/glm
 
 //Dependencies for the target
-mesh_LIB_DEPENDS:STATIC=general;glad;general;shading;general;texture;
+mesh_LIB_DEPENDS:STATIC=general;glad;general;glm;general;shading;general;texture;
 
 //Value Computed by CMake
 project_BINARY_DIR:STATIC=C:/Users/elipe/OneDrive/Desktop/Project/bin

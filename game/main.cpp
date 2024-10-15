@@ -4,6 +4,8 @@
 
 #include "scene.h"
 
+#include <glad/glad.h>
+
 int main()
 {
   auto engine = std::make_unique<Engine>();
