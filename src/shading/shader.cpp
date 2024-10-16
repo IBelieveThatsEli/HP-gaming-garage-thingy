@@ -104,3 +104,8 @@ void Shader::SetMatrix(std::string_view location, glm::mat4 value)
   int modelLoc = glGetUniformLocation(m_id, location.data());
   glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(value));
 }
+
+void Shader::SetShaderLocation(const std::string_view vsPath, const std::string_view fsPath)
+{
+  Load(vsPath, fsPath);
+}

@@ -13,6 +13,8 @@ namespace WhineEngine
     Shader(const std::string_view vsPath, const std::string_view fsPath);
     ~Shader();
 
+    void SetShaderLocation(const std::string_view vsPath, const std::string_view fsPath);
+
     void Load(const std::string_view vsPath, const std::string_view fsPath);
 
     void Use();

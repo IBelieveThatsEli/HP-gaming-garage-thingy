@@ -4,6 +4,9 @@
     <ClCompile Include="C:\Users\elipe\OneDrive\Desktop\Project\src\shading\shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\elipe\OneDrive\Desktop\Project\src\shading\texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\elipe\OneDrive\Desktop\Project\src\shading\CMakeLists.txt" />

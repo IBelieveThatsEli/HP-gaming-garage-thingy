@@ -11,7 +11,6 @@ target_include_directories(game PRIVATE
   ../src/mesh
   ../src/scene
   ../src/shading
-  ../src/texture
   ../src/camera
 )
 
@@ -25,6 +24,5 @@ target_link_libraries(game PRIVATE
   mesh
   scene
   shading
-  texture
   camera
 )

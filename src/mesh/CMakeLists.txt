@@ -9,12 +9,10 @@ target_include_directories(mesh PUBLIC
   libs/glad
   libs/glm
   ../shading
-  ../texture
 )
 
 target_link_libraries(mesh PUBLIC 
   glad
   glm
   shading
-  texture
 )

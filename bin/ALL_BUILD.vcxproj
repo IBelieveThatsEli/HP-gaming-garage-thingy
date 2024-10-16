@@ -213,10 +213,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{27FDC75C-75E1-36BE-9490-EA446037146A}</Project>
       <Name>stb</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\texture\texture.vcxproj">
-      <Project>{B4B1F0F7-4B5D-319A-935B-3F862FB7EA24}</Project>
-      <Name>texture</Name>
-    </ProjectReference>
     <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\win\win.vcxproj">
       <Project>{60079253-66FE-3EB8-B4F9-E2BFD4304FA6}</Project>
       <Name>win</Name>

@@ -27,8 +27,6 @@ C:/Users/elipe/OneDrive/Desktop/Project/bin/src/scene/CMakeFiles/scene.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/scene/CMakeFiles/INSTALL.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/shading/CMakeFiles/shading.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/shading/CMakeFiles/INSTALL.dir
-C:/Users/elipe/OneDrive/Desktop/Project/bin/src/texture/CMakeFiles/texture.dir
-C:/Users/elipe/OneDrive/Desktop/Project/bin/src/texture/CMakeFiles/INSTALL.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/camera/CMakeFiles/camera.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/camera/CMakeFiles/INSTALL.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/game/CMakeFiles/game.dir
