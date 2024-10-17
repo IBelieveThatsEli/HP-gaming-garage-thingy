@@ -128,6 +128,30 @@ void Shader::SetShaderLocation(const std::string_view vsPath, const std::string_
 
 // ============================================================================== //
 
+void Shader::SetInt(std::string_view location, int value)
+{
+  int loc = glGetUniformLocation(m_id, location.data());
+  glUniform1i(m_id, value);
+}
+
+// ============================================================================== //
+
+void Shader::SetBool(std::string_view location, bool value)
+{
+  int loc = glGetUniformLocation(m_id, location.data());
+  glUniform1i(loc, value);
+}
+
+// ============================================================================== //
+
+void Shader::SetFloat(std::string_view location, float value)
+{
+  int loc = glGetUniformLocation(m_id, location.data());
+  glUniform1f(loc, value);
+}
+
+// ============================================================================== //
+
 void Shader::SetMatrix(std::string_view location, glm::mat4 value) 
 {
   int loc = glGetUniformLocation(m_id, location.data());

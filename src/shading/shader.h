@@ -29,9 +29,9 @@ namespace WhineEngine
 
     void Use();
 
-    //void SetInt         (std::string location, int   value);
-    //void SetBool        (std::string location, bool  value);
-    //void SetFloat       (std::string location, float value);
+    void SetInt         (std::string_view location, int   value);
+    void SetBool        (std::string_view location, bool  value);
+    void SetFloat       (std::string_view location, float value);
     void SetVector      (std::string_view location, const glm::vec2 &value);
     void SetVector      (std::string_view location, float x, float y);
     void SetVector      (std::string_view location, const glm::vec3 &value);
