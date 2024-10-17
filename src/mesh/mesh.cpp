@@ -19,18 +19,25 @@
 using namespace WhineEngine;
 
 // ============================================================================== //
+
 Mesh::Mesh()
 {}
+
 // ============================================================================== //
+
 Mesh::Mesh(const std::vector<glm::vec3> &vertices) :
   m_vertices{vertices}
 {}
+
 // ============================================================================== //    
+
 Mesh::Mesh(const std::vector<glm::vec3> &vertices, const std::vector<std::uint32_t> &indices) :
   m_vertices{vertices},
   m_indices{indices}
 {}
+
 // ============================================================================== //
+
 Mesh::~Mesh()
 {
   m_texture = nullptr;
@@ -39,7 +46,9 @@ Mesh::~Mesh()
   glDeleteBuffers(1, &m_VBO);
   // glDeleteBuffers(1, &m_EBO);
 }
+
 // ============================================================================== //
+
 void Mesh::CreateBuffers()
 {
   std::vector<float> data;
@@ -86,41 +95,54 @@ void Mesh::CreateBuffers()
 
   m_texture = std::make_unique<Texture>("../res/textures/container.jpg");
 }
+
 // ============================================================================== //
+
 void Mesh::UseShading()
 {
   m_texture->Use();
   m_shader->Use();
 }
+
 // ============================================================================== //
+
 void Mesh::UseBuffer()
 {
 glBindVertexArray(m_VAO);
 }
+
 // ============================================================================== //
+
 void Mesh::Update()
 {
   glDrawArrays(GL_TRIANGLES, 0, 36);
 }
+
 // ============================================================================== //
+
 // set rotation? is this a good name...
 void Mesh::SetOrientation(float deg, const glm::vec3 &axis) 
 {
   m_model = glm::rotate(m_model, glm::radians(deg), axis);
   m_shader->SetMatrix("model", m_model);
 }
+
 // ============================================================================== //
+
 void Mesh::SetPosition(const glm::vec3 &position)
 {
   m_position = position;
   m_model = glm::translate(m_model, position);
   m_shader->SetMatrix("model", m_model);
 }
+
 // ============================================================================== //
+
 void Mesh::SetScale(const glm::vec3 &scale)
 {
   m_scale = scale;
   m_model = glm::scale(m_model, scale);
   m_shader->SetMatrix("model", m_model);
+
 }
 // ============================================================================== //

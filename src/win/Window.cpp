@@ -1,15 +1,36 @@
+/*
+
+  CREATED: ELI PEFFER
+  FOR: HP GAME JAM
+
+*/
+
 #include "Window.h"
 
 #include <iostream>
 
 using namespace WhineEngine;
 
+// ============================================================================== //
+
 static void framebuffer_callback(GLFWwindow *window, int width, int height)
 {
   glViewport(0, 0, width, height);
 }
 
+// ============================================================================== //
+
+static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
+{
+  // auto win = static_cast<Window *>(glfwGetWindowUserPointer(window));
+  
+}
+
+// ============================================================================== //
+
 Window *Window::m_instance = nullptr;
+
+// ============================================================================== //
 
 Window::Window(std::uint32_t width, std::uint32_t height, std::string_view title) :
   m_width{width}, m_height{height}, m_title{title}
@@ -27,17 +48,23 @@ Window::Window(std::uint32_t width, std::uint32_t height, std::string_view title
   glfwSetFramebufferSizeCallback(m_window, framebuffer_callback);
 }
 
+// ============================================================================== //
+
 Window::~Window()
 {
   glfwDestroyWindow(m_window);
   glfwTerminate();
 }
 
+// ============================================================================== //
+
 void Window::Update()
 {
   glfwPollEvents();
   glfwSwapBuffers(m_window);
 }
+
+// ============================================================================== //
 
 void Window::createWindow()
 {
@@ -48,5 +75,8 @@ void Window::createWindow()
   glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
   m_window = glfwCreateWindow(m_width, m_height, m_title.c_str(), nullptr, nullptr);
+  
   glfwMakeContextCurrent(m_window); 
 }
+
+// ============================================================================== //

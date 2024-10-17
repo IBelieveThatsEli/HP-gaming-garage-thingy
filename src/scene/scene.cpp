@@ -23,8 +23,10 @@ Scene::Scene()
 {
   m_instance = this;
   glEnable(GL_DEPTH_TEST);
-  m_cam = std::make_unique<Camera>(glm::vec3(4.0f, 4.0f, -5.0f));
-  m_cam->SetCamMatrix(45.0f, 0.1f, 100.0f);
+  m_cam = std::make_unique<Camera>(glm::vec3(0.0f, 0.0f,  3.0f), 
+                                   glm::vec3(0.0f, 0.0f, -1.0f), 
+                                   glm::vec3(0.0f, 1.0f,  0.0f));
+  m_cam->SetPerspective(45.0f, 0.1f, 100.0f);
 }
 
 // ============================================================================== //
@@ -48,7 +50,9 @@ void Scene::Update()
   {
     (*itr)->UseBuffer();
     (*itr)->UseShading();
-    m_cam->UpdateMatrix((*itr)->GetShader(), "camProjection");
+    m_cam->Update((*itr)->GetShader());
     (*itr)->Update();
   }
 }
+
+// ============================================================================== //

@@ -1,3 +1,10 @@
+/*
+
+  CREATED: ELI PEFFER
+  FOR: HP GAME JAM
+
+*/
+
 #pragma once
 
 #include <glm/vec3.hpp>
@@ -7,6 +14,11 @@
 
 #include "shader.h"
 
+// WE GET THE ASPECT RATIO FROM THE WINDOW. THERE IS ONLY
+// ONE  WINDOW, WE USE A STATIC VARIABLE TO KEEP TRACK OF 
+// THE WINDOW INSTANCE, THATS HOW WE ARE ABLE TO USE  THE 
+// WINDWOWS PUBLIC VARIABLES
+
 namespace WhineEngine
 {
   class Camera
@@ -15,28 +27,36 @@ namespace WhineEngine
     static Camera *Get() { return m_instance; }
     
     Camera();
-    Camera(const glm::vec3 &position);
-    ~Camera();
+    Camera(glm::vec3 position, glm::vec3 forward, glm::vec3 up);
 
-    const glm::vec3 &GetPosition() { return m_position; }
+    void Update(Shader &shader);
 
-    void SetPosition(const glm::vec3 &position) { m_position = position; }
+    void SetPerspective(float fov, float near, float far);
+    void SetOrthographic(float left, float right, float top, float bottom, float near, float far);
 
-    void SetCamMatrix(float FOVdeg, float nearPlane, float farPlane);
+    void UpdateView();
 
-    void UpdateMatrix(Shader &shader, const char *uniform);
+    void SetPosition(const glm::vec3 &position);
 
-    // void Input(GLFWwindow *window);
+    void SetCameraSpeed(const float camSpeed) { m_camSpeed = camSpeed; }
 
+    float GetCamSpeed() { return m_camSpeed; }
   private:
     static Camera *m_instance;
 
     glm::vec3 m_position;
-    glm::vec3 m_target;
-    glm::vec3 m_direction;
+    glm::vec3 m_forward;
     glm::vec3 m_up;
     glm::vec3 m_right;
 
-    glm::mat4 m_cameraMatrix;
+    float m_camSpeed = 0.05f;
+
+    float m_fov;
+    float m_near;
+    float m_far;
+    bool  m_perspective;
+
+    glm::mat4 m_view;
+    glm::mat4 m_projection;
   };
 }

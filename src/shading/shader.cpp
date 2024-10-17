@@ -1,3 +1,10 @@
+/*
+
+  CREATED: ELI PEFFER
+  FOR: HP GAME JAM
+
+*/
+
 #include "shader.h"
 
 #include <glad/glad.h>
@@ -10,6 +17,8 @@
 #include <string>
 
 using namespace WhineEngine;
+
+// ============================================================================== //
 
 namespace Read
 {
@@ -28,20 +37,28 @@ namespace Read
   }
 }
 
+// ============================================================================== //
+
 Shader::Shader()
 {
   Load("../res/shaders/vert.glsl", "../res/shaders/vert.glsl");
 }
+
+// ============================================================================== //
 
 Shader::Shader(const std::string_view vsPath, const std::string_view fsPath)
 {
   Load(vsPath, fsPath);
 }
 
+// ============================================================================== //
+
 Shader::~Shader()
 {
   glDeleteShader(m_id);
 }
+
+// ============================================================================== //
 
 void Shader::Load(const std::string_view vsPath, const std::string_view fsPath)
 {
@@ -62,8 +79,8 @@ void Shader::Load(const std::string_view vsPath, const std::string_view fsPath)
   glGetShaderiv(vShader, GL_COMPILE_STATUS, &success);
   if(!success)
   {
-      glGetShaderInfoLog(vShader, 512, NULL, infoLog);
-      std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+    glGetShaderInfoLog(vShader, 512, NULL, infoLog);
+    std::cout << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
   };
 
   fShader = glCreateShader(GL_FRAGMENT_SHADER);
@@ -73,8 +90,8 @@ void Shader::Load(const std::string_view vsPath, const std::string_view fsPath)
   glGetShaderiv(fShader, GL_COMPILE_STATUS, &success);
   if(!success)
   {
-      glGetShaderInfoLog(fShader, 512, NULL, infoLog);
-      std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
+    glGetShaderInfoLog(fShader, 512, NULL, infoLog);
+    std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
   };
 
   m_id = glCreateProgram();
@@ -85,8 +102,8 @@ void Shader::Load(const std::string_view vsPath, const std::string_view fsPath)
   glGetShaderiv(m_id, GL_COMPILE_STATUS, &success);
   if(!success)
   {
-      glGetShaderInfoLog(m_id, 512, NULL, infoLog);
-      std::cout << "ERROR::SHADER::SHADERPROGRAM::COMPILATION_FAILED\n" << infoLog << std::endl;
+    glGetShaderInfoLog(m_id, 512, NULL, infoLog);
+    std::cout << "ERROR::SHADER::SHADERPROGRAM::COMPILATION_FAILED\n" << infoLog << std::endl;
   };
 
   glDeleteShader(vShader);
@@ -94,10 +111,14 @@ void Shader::Load(const std::string_view vsPath, const std::string_view fsPath)
 
 }
 
+// ============================================================================== //
+
 void Shader::Use()
 {
   glUseProgram(m_id);
 }
+
+// ============================================================================== //
 
 void Shader::SetMatrix(std::string_view location, glm::mat4 value) 
 {
@@ -105,7 +126,12 @@ void Shader::SetMatrix(std::string_view location, glm::mat4 value)
   glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(value));
 }
 
+// ============================================================================== //
+
+// improve name...
 void Shader::SetShaderLocation(const std::string_view vsPath, const std::string_view fsPath)
 {
   Load(vsPath, fsPath);
 }
+
+// ============================================================================== //

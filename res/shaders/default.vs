@@ -10,6 +10,6 @@ uniform mat4 camProjection;
 out vec2 TexCoord;
 
 void main() {
-   gl_Position = camProjection * model * vec4(aPos, 1.0);
+   gl_Position = projection * view * model * vec4(aPos, 1.0);
    TexCoord = aTexCoords;
 }

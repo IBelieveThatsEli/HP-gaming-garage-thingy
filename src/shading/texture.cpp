@@ -1,3 +1,10 @@
+/*
+
+  CREATED: ELI PEFFER
+  FOR: HP GAME JAM
+
+*/
+
 #include "texture.h"
 
 #include <glad/glad.h>
@@ -5,6 +12,8 @@
 #include <iostream>
 
 using namespace WhineEngine;
+
+// ============================================================================== //
 
 Texture::Texture(const std::string_view filePath)
 {
@@ -33,12 +42,18 @@ Texture::Texture(const std::string_view filePath)
   stbi_image_free(data);
 }
 
+// ============================================================================== //
+
 Texture::~Texture()
 {
 
 }
 
+// ============================================================================== //
+
 void Texture::Use()
 {
   glBindTexture(GL_TEXTURE_2D, m_id);
 }
+
+// ============================================================================== //

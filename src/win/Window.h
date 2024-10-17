@@ -1,3 +1,10 @@
+/*
+
+  CREATED: ELI PEFFER
+  FOR: HP GAME JAM
+
+*/
+
 #pragma once
 
 #include <glad/glad.h>
@@ -27,6 +34,9 @@ namespace WhineEngine
 
     float AspectRatio() { return static_cast<float>(m_width) / m_height; }
   private:
+    // friend void framebuffer_callback(GLFWwindow *window, int width, int height);
+    // friend void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods);
+
     static Window *m_instance;
 
     std::uint32_t m_width, m_height;
