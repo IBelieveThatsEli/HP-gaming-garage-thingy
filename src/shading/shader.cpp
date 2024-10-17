@@ -120,18 +120,60 @@ void Shader::Use()
 
 // ============================================================================== //
 
-void Shader::SetMatrix(std::string_view location, glm::mat4 value) 
-{
-  int modelLoc = glGetUniformLocation(m_id, location.data());
-  glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(value));
-}
-
-// ============================================================================== //
-
 // improve name...
 void Shader::SetShaderLocation(const std::string_view vsPath, const std::string_view fsPath)
 {
   Load(vsPath, fsPath);
+}
+
+// ============================================================================== //
+
+void Shader::SetMatrix(std::string_view location, glm::mat4 value) 
+{
+  int loc = glGetUniformLocation(m_id, location.data());
+  glUniformMatrix4fv(loc, 1, GL_FALSE, glm::value_ptr(value));
+}
+
+// ============================================================================== //
+
+void Shader::SetVector(std::string_view location, const glm::vec2 &value)
+{
+  int loc = glGetUniformLocation(m_id, location.data());
+  glUniform2fv(loc, 1, &value[0]);
+}
+
+void Shader::SetVector(std::string_view location, float x, float y)
+{
+  int loc = glGetUniformLocation(m_id, location.data());
+  glUniform2f(loc, x, y);
+}
+
+// ============================================================================== //
+
+void Shader::SetVector(std::string_view location, const glm::vec3 &value)
+{
+  int loc = glGetUniformLocation(m_id, location.data());
+  glUniform3fv(loc, 1, &value[0]);
+}
+
+void Shader::SetVector(std::string_view location, float x, float y, float z)
+{
+  int loc = glGetUniformLocation(m_id, location.data());
+  glUniform3f(loc, x, y, z);
+}
+
+// ============================================================================== //
+
+void Shader::SetVector(std::string_view location, const glm::vec4 &value)
+{
+  int loc = glGetUniformLocation(m_id, location.data());
+  glUniform4fv(loc, 1, &value[0]);
+}
+
+void Shader::SetVector(std::string_view location, float x, float y, float z, float k)
+{
+  int loc = glGetUniformLocation(m_id, location.data());
+  glUniform4f(loc, x, y, z, k);
 }
 
 // ============================================================================== //

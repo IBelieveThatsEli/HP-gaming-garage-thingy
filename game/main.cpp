@@ -34,20 +34,31 @@ Main::~Main()
 
 void Main::Start()
 {
+  auto cam = Scene::Get()->AddCamera();
+
   auto cube = Scene::Get()->AddCube();
   cube->CreateBuffers();
-  cube->SetScale(glm::vec3(1.0f, 2.0f, 1.0f));
-  cube->SetPosition(glm::vec3(-1.5f, 0.0f, 0.0f));
+  cube->CreateShader("../res/shaders/default_vert.glsl", "../res/shaders/default_frag.glsl");
+  cube->SetOrientation(45.0f, glm::vec3(1.0f, 1.0f, 0.0f));
 
-  auto cube2 = Scene::Get()->AddCube();
-  cube2->CreateBuffers();
+  auto lightSource = Scene::Get()->AddCube();
+  lightSource->CreateBuffers();
+  lightSource->CreateShader("../res/shaders/light_vert.glsl", "../res/shaders/light_frag.glsl");
+  lightSource->SetPosition(glm::vec3(1.0f, 0.5f, 0.75f));
+  lightSource->SetScale(glm::vec3(0.5f, 0.5f, 0.5f));
+
+  auto shader = cube->GetShader();
+  shader.Use();
+  shader.SetVector("objectColor", 1.0f, 0.5f, 0.31f);
+  shader.SetVector("lightColor",  1.0f, 1.0f, 1.0f);
+  shader.SetVector("lightPos", lightSource->GetPosition());
+  shader.SetVector("viewPos", Camera::Get()->GetPosition());
 }
 
 void Main::Update()
 {
   if (Window::Get()->IsWindowOpen()) {
     Scene::Get()->Update();
-    // Scenes::Get()->UpdateScenes();
     Window::Get()->Update();
   } else {
     Engine::Get()->RequestClose();

@@ -10,6 +10,9 @@
 #include <string_view>
 
 #include <glm/mat4x4.hpp>
+#include <glm/vec2.hpp>
+#include <glm/vec3.hpp>
+#include <glm/vec4.hpp>
 
 namespace WhineEngine
 {
@@ -29,9 +32,12 @@ namespace WhineEngine
     //void SetInt         (std::string location, int   value);
     //void SetBool        (std::string location, bool  value);
     //void SetFloat       (std::string location, float value);
-    //void SetVector      (std::string location, math::vec2  value);
-    //void SetVector      (std::string location, math::vec3  value);
-    //void SetVector      (std::string location, math::vec4  value);
+    void SetVector      (std::string_view location, const glm::vec2 &value);
+    void SetVector      (std::string_view location, float x, float y);
+    void SetVector      (std::string_view location, const glm::vec3 &value);
+    void SetVector      (std::string_view location, float x, float y, float z);
+    void SetVector      (std::string_view location, const glm::vec4 &value);
+    void SetVector      (std::string_view location, float x, float y, float z, float k);
     //void SetVectorArray (std::string location, int size, const std::vector<math::vec2>& values);
     //void SetVectorArray (std::string location, int size, const std::vector<math::vec3>& values);
     //void SetVectorArray (std::string location, int size, const std::vector<math::vec4>& values);

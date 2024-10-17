@@ -14,12 +14,13 @@
 #include <glm/gtc/type_ptr.hpp>
 
 //TODO remove this
-#include <iostream>
+//#include <iostream>
 
 using namespace WhineEngine;
 
 // ============================================================================== //
-
+// TODO: what exactly are we trying to do here?
+// WE REQUIRE VERTICES BY DEFAULT NO ERROR HANDLING TO DEAL WITH THIS
 Mesh::Mesh()
 {}
 
@@ -42,65 +43,111 @@ Mesh::~Mesh()
 {
   m_texture = nullptr;
   m_shader = nullptr;
+
   glDeleteVertexArrays(1, &m_VAO);
   glDeleteBuffers(1, &m_VBO);
-  // glDeleteBuffers(1, &m_EBO);
+
+  if (m_indices.size() > 0)
+  {
+    glDeleteBuffers(1, &m_EBO);
+  }
 }
 
 // ============================================================================== //
 
 void Mesh::CreateBuffers()
 {
+  // WE RESERVE MEMORY SPACE ON THE HEAP FOR THE DATA ACCORDING TO 
+  // THEAT DATA WE ARE APPENDING TO IT
   std::vector<float> data;
-
-  data.reserve(m_vertices.size() * 3 + m_UV.size() * 2);
-  std::cout << "VERTICES SIZE: " << m_vertices.size() << '\n';
-  for (int i = 0; i < m_vertices.size(); ++i) {
+  if (m_UV.size() > 0)
+  {
+    if (m_normals.size() > 0)
+    {
+      data.reserve(m_vertices.size() * 3 + m_UV.size() * 2 + m_normals.size() * 3);
+    }
+    else
+    {
+      data.reserve(m_vertices.size() * 3 + m_UV.size() * 2);
+    }
+  }
+  
+  // WE POPULATE THE DATA ACCORDING TO WHAT DATA IS AVAILABLE TO US
+  // IT IS ASSUMED THAT THERE WILL ALWAYS BE VERTICES AVAILABLE
+  for (int i = 0; i < m_vertices.size(); ++i) 
+  {
     data.push_back(m_vertices[i].x);
     data.push_back(m_vertices[i].y);
     data.push_back(m_vertices[i].z);
-    data.push_back(m_UV[i].x);
-    data.push_back(m_UV[i].y);
+    
+    if (m_UV.size() > 0)
+    {
+      data.push_back(m_UV[i].x);
+      data.push_back(m_UV[i].y);
+    }
+
+    if (m_normals.size() > 0)
+    {
+      data.push_back(m_normals[i].x);
+      data.push_back(m_normals[i].y);
+      data.push_back(m_normals[i].z);
+    }
   }
 
   glGenVertexArrays(1, &m_VAO);
 
   glGenBuffers(1, &m_VBO);
-  // glGenBuffers(1, &m_EBO);  
+  
+  // TEST IF INDICES EXISTS, IF IT DOES WE HAVE TO USE EBO
+  if (m_indices.size() > 0) glGenBuffers(1, &m_EBO);  
+
   glBindVertexArray(m_VAO);
 
   glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
-  std::cout << data.size();
+  
   glBufferData(GL_ARRAY_BUFFER, data.size() * sizeof(float), data.data(), GL_STATIC_DRAW);
-  // TODO test if ebo has values...
-  // glBufferData(GL_ARRAY_BUFFER, data.size(), data.data(), GL_STATIC_DRAW);
-
-  // glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
-  // glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (GLvoid*)0);
+  
+  if (m_indices.size() > 0)
+  {
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(m_indices), m_indices.data(), GL_STATIC_DRAW);
+  }
+  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (GLvoid*)0);
   glEnableVertexAttribArray(0);  
 
-  glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (GLvoid*)(3 * sizeof(float)));
+  glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (GLvoid*)(3 * sizeof(float)));
   glEnableVertexAttribArray(1);
 
-  // TODO: default shader btw
-  m_shader = std::make_unique<Shader>("../res/shaders/default.vs", "../res/shaders/default.fs");
+  glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (GLvoid*)(5 * sizeof(float)));
+  glEnableVertexAttribArray(2);
+}
 
+// ============================================================================== //
+
+void Mesh::CreateShader(const char *vPath, const char *fPath)
+{
+  m_shader = std::make_unique<Shader>(vPath, fPath);
+  
+  // TODO: CAN WE DO THIS BETTER?
+  // by default
   m_model = glm::mat4(1.0f);
-  // model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-
   m_shader->Use();
   m_shader->SetMatrix("model", m_model);
+}
 
-  m_texture = std::make_unique<Texture>("../res/textures/container.jpg");
+// ============================================================================== //
+
+void Mesh::CreateTexture(const char *texPath, const char *specularMap)
+{
+  m_texture = std::make_unique<Texture>(texPath);
 }
 
 // ============================================================================== //
 
 void Mesh::UseShading()
 {
-  m_texture->Use();
+  if (m_texture != nullptr) m_texture->Use();
+
   m_shader->Use();
 }
 
@@ -115,12 +162,20 @@ glBindVertexArray(m_VAO);
 
 void Mesh::Update()
 {
-  glDrawArrays(GL_TRIANGLES, 0, 36);
+  //DRAW ACCORDINGLY TODO
+  if (m_indices.size() > 0) 
+  { 
+
+  }
+  else 
+  {
+    // TODO: THIS ONLY WORKS FOR CUBES
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+  }
 }
 
 // ============================================================================== //
 
-// set rotation? is this a good name...
 void Mesh::SetOrientation(float deg, const glm::vec3 &axis) 
 {
   m_model = glm::rotate(m_model, glm::radians(deg), axis);

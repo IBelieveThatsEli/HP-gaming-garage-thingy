@@ -21,6 +21,8 @@ namespace WhineEngine
     static Scene *Get() { return m_instance; }
     Scene();
 
+    Camera *AddCamera();
+
     Cube *AddCube();
 
     void Update();

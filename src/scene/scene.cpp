@@ -22,11 +22,20 @@ Scene *Scene::m_instance = nullptr;
 Scene::Scene()
 {
   m_instance = this;
+  // TEMP
   glEnable(GL_DEPTH_TEST);
+}
+
+// ============================================================================== //
+
+Camera *Scene::AddCamera()
+{
   m_cam = std::make_unique<Camera>(glm::vec3(0.0f, 0.0f,  3.0f), 
                                    glm::vec3(0.0f, 0.0f, -1.0f), 
                                    glm::vec3(0.0f, 1.0f,  0.0f));
   m_cam->SetPerspective(45.0f, 0.1f, 100.0f);
+
+  return m_cam.get();
 }
 
 // ============================================================================== //
@@ -50,6 +59,7 @@ void Scene::Update()
   {
     (*itr)->UseBuffer();
     (*itr)->UseShading();
+    
     m_cam->Update((*itr)->GetShader());
     (*itr)->Update();
   }

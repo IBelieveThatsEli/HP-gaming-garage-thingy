@@ -38,6 +38,8 @@ namespace WhineEngine
 
     void SetPosition(const glm::vec3 &position);
 
+    const glm::vec3 &GetPosition() { return m_position; }
+
     void SetCameraSpeed(const float camSpeed) { m_camSpeed = camSpeed; }
 
     float GetCamSpeed() { return m_camSpeed; }

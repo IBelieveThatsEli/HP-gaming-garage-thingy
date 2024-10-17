@@ -29,6 +29,7 @@ namespace WhineEngine
     std::vector<glm::vec3> m_vertices;
     std::vector<glm::vec2> m_UV;
     std::vector<std::uint32_t> m_indices;
+    std::vector<glm::vec3> m_normals;
   public:
     Mesh();
     // THE LAYOUT OF THE MESH CONSTRUCTOR WILL ULTIMATELY BE DECIDED BY THE
@@ -44,8 +45,12 @@ namespace WhineEngine
 
     void UseShading();
     void UseBuffer();
+  
+    void CreateShader(const char *vPath, const char *fPath);
 
     Shader &GetShader() { return *m_shader; }
+
+    void CreateTexture(const char *texPath, const char *specularMap);
 
     const glm::vec3 &GetPosition() const { return m_position; }
     
@@ -58,7 +63,7 @@ namespace WhineEngine
     void SetOrientation(float deg, const glm::vec3 &axis);
   private:
     std::unique_ptr<Shader>   m_shader;
-    std::unique_ptr<Texture>  m_texture;
+    std::unique_ptr<Texture>  m_texture { nullptr };
 
     unsigned int m_VAO;
     unsigned int m_VBO;
