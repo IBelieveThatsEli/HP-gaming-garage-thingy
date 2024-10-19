@@ -36,15 +36,21 @@ namespace WhineEngine
 
     void UpdateView();
 
+    const glm::vec3 &GetPosition() { return m_position; }
     void SetPosition(const glm::vec3 &position);
 
-    const glm::vec3 &GetPosition() { return m_position; }
-
+    float GetCamSpeed() { return m_camSpeed; }
     void SetCameraSpeed(const float camSpeed) { m_camSpeed = camSpeed; }
 
-    glm::vec3 &GetForward() { return m_forward; }
+    const glm::vec3 &GetForward() { return m_forward; }
+    void SetForward(const glm::vec3 &forward) { m_forward = forward; }
 
-    float GetCamSpeed() { return m_camSpeed; }
+    const glm::vec3 &GetUp() { return m_up; }
+    void SetUp(const glm::vec3 &up) { m_up = up; }
+
+    const glm::vec3 &GetRight() { return m_right; }
+    void SetRight(const glm::vec3 &right) { m_right = right; }
+
   private:
     static Camera *m_instance;
 

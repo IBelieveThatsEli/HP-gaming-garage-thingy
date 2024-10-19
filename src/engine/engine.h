@@ -1,9 +1,7 @@
 #pragma once
 
 #include "app.h"
-
 #include <memory>
-
 #include <ctime>
 
 namespace WhineEngine 

@@ -88,8 +88,8 @@ void Main::Start()
 
   auto shader = cube->GetShader();
   shader.Use();
-  shader.SetVector("material.ambient", material.ambient);
-  shader.SetVector("material.diffuse", material.diffuse);
+  shader.SetVector("material.ambient",  material.ambient);
+  shader.SetVector("material.diffuse",  material.diffuse);
   shader.SetVector("material.specular", material.diffuse);
   shader.SetFloat("material.shininess", material.shininess);
     
@@ -102,24 +102,34 @@ void Main::Start()
 
 void Main::Update()
 {
-  if (Window::Get()->IsWindowOpen()) {
-    Engine::Get()->UpdateDelta();
-    Scene::Get()->Update();
+  if (!Window::Get()->IsWindowOpen()) Engine::Get()->RequestClose();
+  
+  Engine::Get()->UpdateDelta();
+  Scene::Get()->Update();
 
-    auto camera = Camera::Get();
-    if (KeyInput::m_instances.at(0)->GetKeyDown(GLFW_KEY_W)) {
-      camera->SetPosition(
-        camera->GetPosition() + (camera->GetCamSpeed() * Engine::Get()->GetDeltaTime()) * camera->GetForward()
-      );
-    } 
-    if (KeyInput::m_instances.at(0)->GetKeyDown(GLFW_KEY_S)) {
-      camera->SetPosition(
-        camera->GetPosition() - (camera->GetCamSpeed() * Engine::Get()->GetDeltaTime()) * camera->GetForward()
-      );
-    }
-
-    Window::Get()->Update();
-  } else {
-    Engine::Get()->RequestClose();
+  auto camera = Camera::Get();
+  auto speed = (camera->GetCamSpeed() * Engine::Get()->GetDeltaTime());
+  if (KeyInput::m_instances.at(0)->GetKeyDown(GLFW_KEY_W)) {
+    camera->SetPosition(
+      camera->GetPosition() + speed * camera->GetForward()
+    );
+  } 
+  if (KeyInput::m_instances.at(0)->GetKeyDown(GLFW_KEY_S)) {
+    camera->SetPosition(
+      camera->GetPosition() - speed * camera->GetForward()
+    );
   }
+  if (KeyInput::m_instances.at(0)->GetKeyDown(GLFW_KEY_A)) {
+    camera->SetPosition(
+      camera->GetPosition() - glm::normalize(glm::cross(camera->GetForward(), camera->GetUp())) * speed
+    );
+  }
+  if (KeyInput::m_instances.at(0)->GetKeyDown(GLFW_KEY_D)) {
+    camera->SetPosition(
+      camera->GetPosition() + glm::normalize(glm::cross(camera->GetForward(), camera->GetUp())) * speed
+    );
+  }
+
+
+  Window::Get()->Update();
 }
