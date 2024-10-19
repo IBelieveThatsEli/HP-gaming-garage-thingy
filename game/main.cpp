@@ -1,19 +1,29 @@
 #include "main.h"
 
-#include "win/Window.h"
-
-#include "scene/scene.h"
-
 #include <glad/glad.h>
-
 #include <glm/vec3.hpp>
+
+#include "Window.h"
+#include "scene.h"
+#include "input.h"
 
 int main()
 {
   auto engine = std::make_unique<Engine>();
   engine->SetApp(std::make_unique<Main>());
+  engine->SetDelta(std::make_unique<Delta>());
 
   auto window = std::make_unique<Window>(800, 600, "Window");
+
+  KeyInput input = std::vector<int> {
+    GLFW_KEY_A,
+    GLFW_KEY_D,
+    GLFW_KEY_W,
+    GLFW_KEY_S
+  };
+
+  input.SetupKeyInputs(*window);
+
   auto scene = std::make_unique<Scene>();
 
   auto exitCode = engine->Run();
@@ -93,7 +103,21 @@ void Main::Start()
 void Main::Update()
 {
   if (Window::Get()->IsWindowOpen()) {
+    Engine::Get()->UpdateDelta();
     Scene::Get()->Update();
+
+    auto camera = Camera::Get();
+    if (KeyInput::m_instances.at(0)->GetKeyDown(GLFW_KEY_W)) {
+      camera->SetPosition(
+        camera->GetPosition() + (camera->GetCamSpeed() * Engine::Get()->GetDeltaTime()) * camera->GetForward()
+      );
+    } 
+    if (KeyInput::m_instances.at(0)->GetKeyDown(GLFW_KEY_S)) {
+      camera->SetPosition(
+        camera->GetPosition() - (camera->GetCamSpeed() * Engine::Get()->GetDeltaTime()) * camera->GetForward()
+      );
+    }
+
     Window::Get()->Update();
   } else {
     Engine::Get()->RequestClose();

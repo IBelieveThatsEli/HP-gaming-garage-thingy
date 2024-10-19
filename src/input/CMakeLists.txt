@@ -4,10 +4,12 @@ add_library(input STATIC
 
 target_include_directories(input PUBLIC 
   input.h
-  ../win
   libs/glfw
+  libs/glad
+  ../win
 )
 
 target_link_libraries(input PUBLIC
   glfw
+  glad
 )

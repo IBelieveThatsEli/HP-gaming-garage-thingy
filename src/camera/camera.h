@@ -42,6 +42,8 @@ namespace WhineEngine
 
     void SetCameraSpeed(const float camSpeed) { m_camSpeed = camSpeed; }
 
+    glm::vec3 &GetForward() { return m_forward; }
+
     float GetCamSpeed() { return m_camSpeed; }
   private:
     static Camera *m_instance;
@@ -51,7 +53,7 @@ namespace WhineEngine
     glm::vec3 m_up;
     glm::vec3 m_right;
 
-    float m_camSpeed = 0.05f;
+    float m_camSpeed = 2.5f;
 
     float m_fov;
     float m_near;

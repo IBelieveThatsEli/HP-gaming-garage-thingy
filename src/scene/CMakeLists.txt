@@ -5,16 +5,16 @@ add_library(scene STATIC
 target_include_directories(scene PUBLIC
   scene.h
   ../mesh
+  ../win
   libs/glad
   libs/glm
   ../camera
-  ../win
 )
 
 target_link_libraries(scene PRIVATE
   mesh
+  win
   glad
   glm
   camera
-  win
 )

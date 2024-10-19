@@ -25,9 +25,10 @@ namespace WhineEngine
     bool m_enabled;
 
     static void SetupKeyInputs(Window &window);
+    
+    static std::vector<KeyInput*> m_instances;
   private:
     static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods);
 
-    static std::vector<KeyInput*> m_instances;
   };
 }

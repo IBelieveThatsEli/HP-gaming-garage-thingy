@@ -197,6 +197,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Project>{DA038934-C509-3293-B197-8FACE558F30E}</Project>
       <Name>glm</Name>
     </ProjectReference>
+    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\input\input.vcxproj">
+      <Project>{D590E893-E851-3E17-B157-4AAE21EA6845}</Project>
+      <Name>input</Name>
+    </ProjectReference>
     <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\src\mesh\mesh.vcxproj">
       <Project>{18686FC8-BE3E-30AC-A65D-9C85C13FDE1B}</Project>
       <Name>mesh</Name>

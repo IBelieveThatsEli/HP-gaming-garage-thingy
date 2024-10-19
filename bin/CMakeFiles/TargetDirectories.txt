@@ -29,5 +29,7 @@ C:/Users/elipe/OneDrive/Desktop/Project/bin/src/shading/CMakeFiles/shading.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/shading/CMakeFiles/INSTALL.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/camera/CMakeFiles/camera.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/src/camera/CMakeFiles/INSTALL.dir
+C:/Users/elipe/OneDrive/Desktop/Project/bin/src/input/CMakeFiles/input.dir
+C:/Users/elipe/OneDrive/Desktop/Project/bin/src/input/CMakeFiles/INSTALL.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/game/CMakeFiles/game.dir
 C:/Users/elipe/OneDrive/Desktop/Project/bin/game/CMakeFiles/INSTALL.dir
