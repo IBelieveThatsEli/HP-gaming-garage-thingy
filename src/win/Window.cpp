@@ -20,14 +20,6 @@ static void framebuffer_callback(GLFWwindow *window, int width, int height)
 
 // ============================================================================== //
 
-static void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
-{
-  // auto win = static_cast<Window *>(glfwGetWindowUserPointer(window));
-  
-}
-
-// ============================================================================== //
-
 Window *Window::m_instance = nullptr;
 
 // ============================================================================== //

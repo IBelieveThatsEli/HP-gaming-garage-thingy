@@ -14,6 +14,8 @@
 #include <string>
 #include <string_view>
 
+#include <set>
+
 namespace WhineEngine
 {
   class Window
@@ -33,6 +35,9 @@ namespace WhineEngine
     bool IsWindowOpen() const { return !glfwWindowShouldClose(m_window); }
 
     float AspectRatio() { return static_cast<float>(m_width) / m_height; }
+
+    GLFWwindow *GetWindow() { return m_window; }
+
   private:
     // friend void framebuffer_callback(GLFWwindow *window, int width, int height);
     // friend void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods);
@@ -42,6 +47,7 @@ namespace WhineEngine
     std::uint32_t m_width, m_height;
     std::string m_title;
     GLFWwindow *m_window{nullptr};
+
 
     void createWindow();
   };

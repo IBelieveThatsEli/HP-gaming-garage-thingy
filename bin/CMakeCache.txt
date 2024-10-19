@@ -370,7 +370,7 @@ project_IS_TOP_LEVEL:STATIC=ON
 project_SOURCE_DIR:STATIC=C:/Users/elipe/OneDrive/Desktop/Project
 
 //Dependencies for the target
-scene_LIB_DEPENDS:STATIC=general;mesh;general;glad;general;glm;general;camera;
+scene_LIB_DEPENDS:STATIC=general;mesh;general;glad;general;glm;general;camera;general;win;
 
 //Dependencies for the target
 shader_LIB_DEPENDS:STATIC=general;glad;

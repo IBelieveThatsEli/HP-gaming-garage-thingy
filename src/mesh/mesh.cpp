@@ -137,7 +137,7 @@ void Mesh::CreateShader(const char *vPath, const char *fPath)
 
 // ============================================================================== //
 
-void Mesh::CreateTexture(const char *texPath, const char *specularMap)
+void Mesh::CreateTexture(const char *texPath)
 {
   m_texture = std::make_unique<Texture>(texPath);
 }

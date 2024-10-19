@@ -10,6 +10,7 @@
 #include <glad/glad.h>
 #include "camera.h"
 #include "shader.h"
+#include "window.h"
 
 using namespace WhineEngine;
 
@@ -53,7 +54,7 @@ void Scene::Update()
   glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-  if (m_cubes.size() == 0) return;
+  if (m_cubes.size() == 0) return;  
 
   for (auto itr { m_cubes.begin() }; itr != m_cubes.end(); ++itr) 
   {

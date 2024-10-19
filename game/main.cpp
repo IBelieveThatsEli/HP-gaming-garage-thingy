@@ -1,8 +1,8 @@
 #include "main.h"
 
-#include "Window.h"
+#include "win/Window.h"
 
-#include "scene.h"
+#include "scene/scene.h"
 
 #include <glad/glad.h>
 
@@ -39,7 +39,7 @@ void Main::Start()
   auto cube = Scene::Get()->AddCube();
   cube->CreateBuffers();
   cube->CreateShader("../res/shaders/texture_vert.glsl", "../res/shaders/texture_frag.glsl");
-  cube->CreateTexture("../res/textures/container.jpg", "");
+  cube->CreateTexture("../res/textures/zuma.jpg");
   cube->SetOrientation(45.0f, glm::vec3(1.0f, 1.0f, 0.0f));
 
   auto lightSource = Scene::Get()->AddCube();
@@ -48,16 +48,43 @@ void Main::Start()
   lightSource->SetPosition(glm::vec3(1.0f, 1.0f, 1.0f));
   lightSource->SetScale(glm::vec3(0.5f, 0.5f, 0.5f));
 
+  struct Material {
+    glm::vec3 ambient;
+    glm::vec3 diffuse;
+    glm::vec3 specular;
+    float shininess;
+  };
+
+  struct Light {
+    glm::vec3 position;
+    glm::vec3 ambient;
+    glm::vec3 diffuse;
+    glm::vec3 specular;
+  };
+
+  Material material = {
+    glm::vec3(1.0f, 0.5f, 0.31f),
+    glm::vec3(1.0f, 0.5f, 0.31f),
+    glm::vec3(0.5f, 0.5f, 0.5f),
+    32.0f
+  };
+
+  Light light = {
+    Camera::Get()->GetPosition(),
+    glm::vec3(0.2f, 0.2f, 0.2f),
+    glm::vec3(0.5f, 0.5f, 0.5f),
+    glm::vec3(1.0f, 1.0f, 1.0f)
+  };
+
   auto shader = cube->GetShader();
   shader.Use();
-  // shader.SetVector("objectColor", 1.0f, 0.5f, 0.31f);
-  shader.SetVector("material.ambient", 1.0f, 0.5f, 0.31f);
-  shader.SetVector("material.diffuse", 1.0f, 0.5f, 0.31f);
-  shader.SetVector("material.specular", 0.5f, 0.5f, 0.5f);
-  shader.SetFloat("material.shininess", 32.0f);
+  shader.SetVector("material.ambient", material.ambient);
+  shader.SetVector("material.diffuse", material.diffuse);
+  shader.SetVector("material.specular", material.diffuse);
+  shader.SetFloat("material.shininess", material.shininess);
     
   shader.SetVector("light.ambient",  0.2f, 0.2f, 0.2f);
-  shader.SetVector("light.diffuse",  0.5f, 0.5f, 0.5f); // darken diffuse light a bit
+  shader.SetVector("light.diffuse",  0.5f, 0.5f, 0.5f);
   shader.SetVector("light.specular", 1.0f, 1.0f, 1.0f); 
   shader.SetVector("light.position", lightSource->GetPosition());
   shader.SetVector("viewPos", Camera::Get()->GetPosition());

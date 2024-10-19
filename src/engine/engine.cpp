@@ -1,6 +1,11 @@
 #include "engine.h"
 
+#include <ctime>
+
+#include <iostream>
+
 using namespace WhineEngine;
+
 
 Engine *Engine::instance = nullptr;
 Engine::Engine() :

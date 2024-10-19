@@ -12,6 +12,7 @@ target_include_directories(game PRIVATE
   ../src/scene
   ../src/shading
   ../src/camera
+  ../src/input
 )
 
 target_link_libraries(game PRIVATE
@@ -25,4 +26,5 @@ target_link_libraries(game PRIVATE
   scene
   shading
   camera
+  input
 )

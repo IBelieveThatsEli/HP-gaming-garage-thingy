@@ -48,9 +48,12 @@ namespace WhineEngine
   
     void CreateShader(const char *vPath, const char *fPath);
 
-    Shader &GetShader() { return *m_shader; }
+    void CopyShader(std::unique_ptr<Shader> shader) { m_shader = std::move(shader); }
 
-    void CreateTexture(const char *texPath, const char *specularMap);
+    Shader &GetShader() { return *m_shader; }
+    // std::unique_ptr<Shader> &GetShader() { return m_shader; }
+
+    void CreateTexture(const char *texPath);
 
     const glm::vec3 &GetPosition() const { return m_position; }
     

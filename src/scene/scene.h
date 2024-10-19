@@ -26,10 +26,10 @@ namespace WhineEngine
     Cube *AddCube();
 
     void Update();
+    std::vector<std::unique_ptr<Cube>> m_cubes;
   private:
     static Scene *m_instance;
     // std::unique_ptr<Mesh> m_mesh;
-    std::vector<std::unique_ptr<Cube>> m_cubes;
     std::unique_ptr<Camera> m_cam;
   };
 }

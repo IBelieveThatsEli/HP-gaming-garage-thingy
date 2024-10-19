@@ -8,6 +8,7 @@ target_include_directories(scene PUBLIC
   libs/glad
   libs/glm
   ../camera
+  ../win
 )
 
 target_link_libraries(scene PRIVATE
@@ -15,4 +16,5 @@ target_link_libraries(scene PRIVATE
   glad
   glm
   camera
+  win
 )
