@@ -136,11 +136,6 @@ void Main::Update()
     );
   }
 
-// glm::vec3 direction;
-//     direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-//     direction.y = sin(glm::radians(pitch));
-//     direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-
   auto mouse = MouseInput::Get();
   glm::vec3 direction = glm::vec3(
     std::cos(glm::radians(mouse->GetMousePosition().x)) * std::cos(glm::radians(mouse->GetMousePosition().y)),
