@@ -11,6 +11,8 @@
 #include "camera.h"
 #include "shader.h"
 #include "window.h"
+#include "cube.h"
+#include "sphere.h"
 
 using namespace WhineEngine;
 
@@ -41,9 +43,17 @@ Camera *Scene::AddCamera()
 
 // ============================================================================== //
 
-Cube *Scene::AddCube()
+Mesh *Scene::AddCube()
 {
   m_cubes.emplace_back(std::make_unique<Cube>());
+  return m_cubes.back().get();
+}
+
+// ============================================================================== //
+
+Mesh *Scene::AddSphere()
+{
+  m_cubes.emplace_back(std::make_unique<Sphere>(1, 6, 8));
   return m_cubes.back().get();
 }
 

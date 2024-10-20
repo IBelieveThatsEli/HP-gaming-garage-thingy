@@ -7,8 +7,7 @@
 
 #pragma once
 
-// #include "mesh.h"
-#include "cube.h"
+#include "mesh.h"
 #include "camera.h"
 
 #include <memory>
@@ -23,10 +22,12 @@ namespace WhineEngine
 
     Camera *AddCamera();
 
-    Cube *AddCube();
+    Mesh *AddCube();
+
+    Mesh *AddSphere();
 
     void Update();
-    std::vector<std::unique_ptr<Cube>> m_cubes;
+    std::vector<std::unique_ptr<Mesh>> m_cubes;
   private:
     static Scene *m_instance;
     // std::unique_ptr<Mesh> m_mesh;

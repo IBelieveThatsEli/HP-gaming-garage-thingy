@@ -99,7 +99,8 @@ void Mesh::CreateBuffers()
   glGenBuffers(1, &m_VBO);
   
   // TEST IF INDICES EXISTS, IF IT DOES WE HAVE TO USE EBO
-  if (m_indices.size() > 0) glGenBuffers(1, &m_EBO);  
+  if (m_indices.size() > 0) 
+    glGenBuffers(1, &m_EBO);  
 
   glBindVertexArray(m_VAO);
 
@@ -110,8 +111,9 @@ void Mesh::CreateBuffers()
   if (m_indices.size() > 0)
   {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(m_indices), m_indices.data(), GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, m_indices.size() * sizeof(unsigned int), m_indices.data(), GL_STATIC_DRAW);
   }
+
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (GLvoid*)0);
   glEnableVertexAttribArray(0);  
 
@@ -159,13 +161,13 @@ glBindVertexArray(m_VAO);
 }
 
 // ============================================================================== //
-
 void Mesh::Update()
 {
   //DRAW ACCORDINGLY TODO
   if (m_indices.size() > 0) 
-  { 
-
+  {
+    glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT, 0);
+    // glDrawArrays(GL_TRIANGLES, 0, m_indices.size());
   }
   else 
   {

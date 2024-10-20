@@ -19,9 +19,11 @@ using namespace WhineEngine;
 
 Sphere::Sphere(int radius, int latitudes, int longitudes)
 {
-  longitudes = longitudes > 3 ? longitudes : 3;
-  latitudes  = latitudes  > 2 ? latitudes  : 2;
-  
+  if(longitudes < 3)
+    longitudes = 3;
+  if(latitudes < 2)
+    latitudes = 2;
+
   std::vector<glm::vec3> vertices;
   std::vector<glm::vec3> normals;
   std::vector<glm::vec2> uv;
@@ -29,27 +31,33 @@ Sphere::Sphere(int radius, int latitudes, int longitudes)
 
   float nx, ny, nz, lengthInv = 1.0f / radius;
 
+  struct Vertex
+  {
+    float x, y, z, s, t; // Postion and Texcoords
+  };
+
   float deltaLatitude = M_PI / latitudes;
   float deltaLongitude = 2 * M_PI / longitudes;
   float latitudeAngle;
   float longitudeAngle;
 
+  // Compute all vertices first except normals
   for (int i = 0; i <= latitudes; ++i)
   {
     latitudeAngle = M_PI / 2 - i * deltaLatitude; 
-    float xy = radius * cosf(latitudeAngle);
-    float z = radius * sinf(latitudeAngle);
+    float xy = radius * cosf(latitudeAngle);      
+    float z = radius * sinf(latitudeAngle);       
 
     for (int j = 0; j <= longitudes; ++j)
     {
       longitudeAngle = j * deltaLongitude;
 
-      glm::vec3 vertex;
-      vertex.x = xy * cosf(longitudeAngle);
-      vertex.y = xy * sinf(longitudeAngle);
-      vertex.z = z;                        
-      vertex.s = (float)j/longitudes;      
-      vertex.t = (float)i/latitudes;       
+      Vertex vertex;
+      vertex.x = xy * cosf(longitudeAngle);       
+      vertex.y = xy * sinf(longitudeAngle);       
+      vertex.z = z;                               
+      vertex.s = (float)j/longitudes;             
+      vertex.t = (float)i/latitudes;              
       vertices.push_back(glm::vec3(vertex.x, vertex.y, vertex.z));
       uv.push_back(glm::vec2(vertex.s, vertex.t));
 

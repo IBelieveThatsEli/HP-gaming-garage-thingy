@@ -28,7 +28,7 @@ namespace WhineEngine
   public:
     std::vector<glm::vec3> m_vertices;
     std::vector<glm::vec2> m_UV;
-    std::vector<std::uint32_t> m_indices;
+    std::vector<unsigned int> m_indices;
     std::vector<glm::vec3> m_normals;
   public:
     Mesh();

@@ -56,7 +56,7 @@ void Main::Start()
   cube->CreateTexture("../res/textures/zuma.jpg");
   cube->SetOrientation(45.0f, glm::vec3(1.0f, 1.0f, 0.0f));
 
-  auto lightSource = Scene::Get()->AddCube();
+  auto lightSource = Scene::Get()->AddSphere();
   lightSource->CreateBuffers();
   lightSource->CreateShader("../res/shaders/light_vert.glsl", "../res/shaders/light_frag.glsl");
   lightSource->SetPosition(glm::vec3(1.0f, 1.0f, 1.0f));
