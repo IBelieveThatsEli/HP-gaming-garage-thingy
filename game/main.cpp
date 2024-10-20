@@ -6,6 +6,7 @@
 #include "Window.h"
 #include "scene.h"
 #include "input.h"
+#include "mouseinput.h"
 
 int main()
 {
@@ -23,6 +24,9 @@ int main()
   };
 
   input.SetupKeyInputs(*window);
+
+  MouseInput mouseInput;
+  mouseInput.SetupMousePos(*window);
 
   auto scene = std::make_unique<Scene>();
 
@@ -107,6 +111,8 @@ void Main::Update()
   Engine::Get()->UpdateDelta();
   Scene::Get()->Update();
 
+  glfwSetInputMode(Window::Get()->GetWindow(), GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
   auto camera = Camera::Get();
   auto speed = (camera->GetCamSpeed() * Engine::Get()->GetDeltaTime());
   if (KeyInput::m_instances.at(0)->GetKeyDown(GLFW_KEY_W)) {
@@ -130,6 +136,19 @@ void Main::Update()
     );
   }
 
+// glm::vec3 direction;
+//     direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+//     direction.y = sin(glm::radians(pitch));
+//     direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+
+  auto mouse = MouseInput::Get();
+  glm::vec3 direction = glm::vec3(
+    std::cos(glm::radians(mouse->GetMousePosition().x)) * std::cos(glm::radians(mouse->GetMousePosition().y)),
+    std::sin(glm::radians(mouse->GetMousePosition().y)),
+    std::sin(glm::radians(mouse->GetMousePosition().x) * std::cos(glm::radians(mouse->GetMousePosition().y)))
+  );
+  camera->SetForward(glm::normalize(direction));
+  
 
   Window::Get()->Update();
 }

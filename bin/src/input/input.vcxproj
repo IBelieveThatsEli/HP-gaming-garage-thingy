@@ -78,7 +78,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -97,10 +97,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -113,7 +113,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -132,10 +132,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -148,7 +148,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -167,10 +167,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -183,7 +183,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -201,10 +201,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.h;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glfw;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glad;C:\Users\elipe\OneDrive\Desktop\Project\src\input\libs\glm;C:\Users\elipe\OneDrive\Desktop\Project\src\input\..\win;C:\Users\elipe\OneDrive\Desktop\Project\libs\glfw\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glad\include;C:\Users\elipe\OneDrive\Desktop\Project\libs\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -274,6 +274,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.cpp" />
+    <ClCompile Include="C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\ZERO_CHECK.vcxproj">
@@ -289,6 +290,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\libs\glfw\src\glfw.vcxproj">
       <Project>{9B4E0F3F-32B2-3FBE-80EB-B81BDA19AFDE}</Project>
       <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\elipe\OneDrive\Desktop\Project\bin\libs\glm\glm\glm.vcxproj">
+      <Project>{DA038934-C509-3293-B197-8FACE558F30E}</Project>
+      <Name>glm</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

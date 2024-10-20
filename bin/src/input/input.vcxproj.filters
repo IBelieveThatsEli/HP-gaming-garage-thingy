@@ -4,6 +4,9 @@
     <ClCompile Include="C:\Users\elipe\OneDrive\Desktop\Project\src\input\input.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\elipe\OneDrive\Desktop\Project\src\input\mouseinput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\elipe\OneDrive\Desktop\Project\src\input\CMakeLists.txt" />

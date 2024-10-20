@@ -358,7 +358,7 @@ glm_IS_TOP_LEVEL:STATIC=OFF
 glm_SOURCE_DIR:STATIC=C:/Users/elipe/OneDrive/Desktop/Project/libs/glm
 
 //Dependencies for the target
-input_LIB_DEPENDS:STATIC=general;glfw;general;glad;
+input_LIB_DEPENDS:STATIC=general;glfw;general;glad;general;glm;
 
 //Dependencies for the target
 mesh_LIB_DEPENDS:STATIC=general;glad;general;glm;general;shading;
