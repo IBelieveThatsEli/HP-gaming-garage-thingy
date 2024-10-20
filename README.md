@@ -7,4 +7,5 @@ umm what else... created using opengl, glm, glad, glfw, stb and mabe some other 
 ![image](https://github.com/user-attachments/assets/683bd26f-47cd-4738-9762-ab817e053580)
 
 2024/10/20 how did we get here?
-![image](https://github.com/user-attachments/assets/cbad57aa-7507-4868-881b-4c45c329ba4e)
+![image](https://github.com/user-attachments/assets/0827aa44-8a68-4e72-bec4-2f5614e45b74)
+
