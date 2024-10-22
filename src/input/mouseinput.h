@@ -1,7 +1,7 @@
 #pragma once
 
 #include <glm/vec2.hpp>
-#include "Window.h"
+#include "../win/Window.h"
 
 namespace WhineEngine
 {

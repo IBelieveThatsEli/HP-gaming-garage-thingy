@@ -7,7 +7,7 @@
 
 #include "camera.h"
 
-#include "Window.h"
+#include "../win/Window.h"
 
 using namespace WhineEngine;
 

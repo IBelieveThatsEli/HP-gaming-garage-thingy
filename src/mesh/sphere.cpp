@@ -95,4 +95,6 @@ Sphere::Sphere(int radius, int latitudes, int longitudes)
   m_normals = normals;
   m_UV = uv;
   m_indices = indices;
+
+  CreateBuffers();
 }

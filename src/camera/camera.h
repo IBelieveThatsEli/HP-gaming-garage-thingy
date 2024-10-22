@@ -12,7 +12,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "shader.h"
+#include "../shading/shader.h"
 
 // WE GET THE ASPECT RATIO FROM THE WINDOW. THERE IS ONLY
 // ONE  WINDOW, WE USE A STATIC VARIABLE TO KEEP TRACK OF 

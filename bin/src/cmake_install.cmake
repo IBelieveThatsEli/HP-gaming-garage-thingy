@@ -32,15 +32,3 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/engine/cmake_install.cmake")
-  include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/win/cmake_install.cmake")
-  include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/mesh/cmake_install.cmake")
-  include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/scene/cmake_install.cmake")
-  include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/shading/cmake_install.cmake")
-  include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/camera/cmake_install.cmake")
-  include("C:/Users/elipe/OneDrive/Desktop/Project/bin/src/input/cmake_install.cmake")
-
-endif()
-

@@ -13,14 +13,10 @@
 #include <glm/mat4x4.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-//TODO remove this
-//#include <iostream>
-
 using namespace WhineEngine;
 
 // ============================================================================== //
-// TODO: what exactly are we trying to do here?
-// WE REQUIRE VERTICES BY DEFAULT NO ERROR HANDLING TO DEAL WITH THIS
+
 Mesh::Mesh()
 {}
 
@@ -57,8 +53,6 @@ Mesh::~Mesh()
 
 void Mesh::CreateBuffers()
 {
-  // WE RESERVE MEMORY SPACE ON THE HEAP FOR THE DATA ACCORDING TO 
-  // THEAT DATA WE ARE APPENDING TO IT
   std::vector<float> data;
   if (m_UV.size() > 0)
   {
@@ -72,8 +66,6 @@ void Mesh::CreateBuffers()
     }
   }
   
-  // WE POPULATE THE DATA ACCORDING TO WHAT DATA IS AVAILABLE TO US
-  // IT IS ASSUMED THAT THERE WILL ALWAYS BE VERTICES AVAILABLE
   for (int i = 0; i < m_vertices.size(); ++i) 
   {
     data.push_back(m_vertices[i].x);
@@ -98,7 +90,6 @@ void Mesh::CreateBuffers()
 
   glGenBuffers(1, &m_VBO);
   
-  // TEST IF INDICES EXISTS, IF IT DOES WE HAVE TO USE EBO
   if (m_indices.size() > 0) 
     glGenBuffers(1, &m_EBO);  
 
@@ -130,8 +121,6 @@ void Mesh::CreateShader(const char *vPath, const char *fPath)
 {
   m_shader = std::make_unique<Shader>(vPath, fPath);
   
-  // TODO: CAN WE DO THIS BETTER?
-  // by default
   m_model = glm::mat4(1.0f);
   m_shader->Use();
   m_shader->SetMatrix("model", m_model);
@@ -157,22 +146,24 @@ void Mesh::UseShading()
 
 void Mesh::UseBuffer()
 {
-glBindVertexArray(m_VAO);
+  glBindVertexArray(m_VAO);
 }
 
 // ============================================================================== //
+
 void Mesh::Update()
 {
-  //DRAW ACCORDINGLY TODO
+  UseShading();
+
+  UseBuffer();
+  
   if (m_indices.size() > 0) 
   {
-    glDrawElements(GL_TRIANGLES, m_indices.size(), GL_UNSIGNED_INT, 0);
-    // glDrawArrays(GL_TRIANGLES, 0, m_indices.size());
+    glDrawElements(GL_TRIANGLES, (GLsizei)m_indices.size(), GL_UNSIGNED_INT, 0);
   }
   else 
   {
-    // TODO: THIS ONLY WORKS FOR CUBES
-    glDrawArrays(GL_TRIANGLES, 0, 36);
+    glDrawArrays(GL_TRIANGLES, 0, (GLsizei)m_vertices.size());
   }
 }
 

@@ -8,11 +8,11 @@
 #include "scene.h"
 
 #include <glad/glad.h>
-#include "camera.h"
-#include "shader.h"
-#include "window.h"
-#include "cube.h"
-#include "sphere.h"
+#include "../camera/camera.h"
+#include "../shading/shader.h"
+#include "../win/window.h"
+#include "../mesh/cube.h"
+#include "../mesh/sphere.h"
 
 using namespace WhineEngine;
 
@@ -68,11 +68,8 @@ void Scene::Update()
 
   for (auto itr { m_cubes.begin() }; itr != m_cubes.end(); ++itr) 
   {
-    (*itr)->UseBuffer();
-    (*itr)->UseShading();
-    
-    m_cam->Update((*itr)->GetShader());
     (*itr)->Update();
+    m_cam->Update((*itr)->GetShader());
   }
 }
 

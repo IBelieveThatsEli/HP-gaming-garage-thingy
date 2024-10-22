@@ -9,31 +9,31 @@
 
 #include <vector>
 #include <memory>
-#include "shader.h"
-#include "texture.h"
+#include "../shading/shader.h"
+#include "../shading/texture.h"
 
 #include <glm/vec3.hpp>
 #include <glm/vec2.hpp>
 #include <glm/mat4x4.hpp>
-
-// hello inexperienced programmer here *wave emoji*
-// DO NOT INCLUDE THIS MESH CLASS AS IS, AS MAIN CLASS UNLEESS, that is if it is implemented // WHICH IT IS NOT
-// UNLESS U INTEND TO USE IT FOR LOADING MODELS.
-// so for example use the cube class instead. u catch my drift?
 
 namespace WhineEngine
 {
   class Mesh
   {
   public:
-    std::vector<glm::vec3> m_vertices;
-    std::vector<glm::vec2> m_UV;
+    struct _Texture {
+      unsigned int id;
+      std::string type;
+      std::string path;
+    };
+
+    std::vector<glm::vec3>    m_vertices;
+    std::vector<glm::vec2>    m_UV;
     std::vector<unsigned int> m_indices;
-    std::vector<glm::vec3> m_normals;
+    std::vector<glm::vec3>    m_normals;
+    std::vector<_Texture>      m_textures;
   public:
     Mesh();
-    // THE LAYOUT OF THE MESH CONSTRUCTOR WILL ULTIMATELY BE DECIDED BY THE
-    // WAY OBJ OR FBX FILES ARE SAVED
     Mesh(const std::vector<glm::vec3> &vertices);
     Mesh(const std::vector<glm::vec3> &vertices, const std::vector<std::uint32_t> &indices);
     
@@ -51,7 +51,6 @@ namespace WhineEngine
     void CopyShader(std::unique_ptr<Shader> shader) { m_shader = std::move(shader); }
 
     Shader &GetShader() { return *m_shader; }
-    // std::unique_ptr<Shader> &GetShader() { return m_shader; }
 
     void CreateTexture(const char *texPath);
 
@@ -65,7 +64,7 @@ namespace WhineEngine
 
     void SetOrientation(float deg, const glm::vec3 &axis);
   private:
-    std::unique_ptr<Shader>   m_shader;
+    std::unique_ptr<Shader>   m_shader  { nullptr };
     std::unique_ptr<Texture>  m_texture { nullptr };
 
     unsigned int m_VAO;

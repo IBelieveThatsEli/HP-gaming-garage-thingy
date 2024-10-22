@@ -7,8 +7,8 @@
 
 #pragma once
 
-#include "mesh.h"
-#include "camera.h"
+#include "../mesh/mesh.h"
+#include "../camera/camera.h"
 
 #include <memory>
 

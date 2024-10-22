@@ -6,25 +6,27 @@ target_include_directories(game PRIVATE
   libs/glad
   libs/glm
   libs/stb
-  ../src/win
-  ../src/engine
-  ../src/mesh
-  ../src/scene
-  ../src/shading
-  ../src/camera
-  ../src/input
+  src
 )
+  # ../src/win
+  # ../src/engine
+  # ../src/mesh
+  # ../src/scene
+  # ../src/shading
+  # ../src/camera
+  # ../src/input
 
 target_link_libraries(game PRIVATE
   glfw
   glad
   glm
   stb
-  win
-  engine
-  mesh
-  scene
-  shading
-  camera
-  input
+  src
 )
+  # win
+  # engine
+  # mesh
+  # scene
+  # shading
+  # camera
+  # input

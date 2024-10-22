@@ -3,10 +3,10 @@
 #include <glad/glad.h>
 #include <glm/vec3.hpp>
 
-#include "Window.h"
-#include "scene.h"
-#include "input.h"
-#include "mouseinput.h"
+#include "../src/win/Window.h"
+#include "../src/scene/scene.h"
+#include "../src/input/input.h"
+#include "../src/input/mouseinput.h"
 
 int main()
 {
@@ -51,16 +51,14 @@ void Main::Start()
   auto cam = Scene::Get()->AddCamera();
 
   auto cube = Scene::Get()->AddCube();
-  cube->CreateBuffers();
   cube->CreateShader("../res/shaders/texture_vert.glsl", "../res/shaders/texture_frag.glsl");
   cube->CreateTexture("../res/textures/zuma.jpg");
   cube->SetOrientation(45.0f, glm::vec3(1.0f, 1.0f, 0.0f));
 
   auto lightSource = Scene::Get()->AddSphere();
-  lightSource->CreateBuffers();
   lightSource->CreateShader("../res/shaders/light_vert.glsl", "../res/shaders/light_frag.glsl");
   lightSource->SetPosition(glm::vec3(1.0f, 1.0f, 1.0f));
-  lightSource->SetScale(glm::vec3(0.5f, 0.5f, 0.5f));
+  lightSource->SetScale(glm::vec3(0.35f, 0.35f, 0.35f));
 
   struct Material {
     glm::vec3 ambient;
