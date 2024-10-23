@@ -6,6 +6,7 @@ umm what else... created using opengl, glm, glad, glfw, stb and mabe some other 
 2024/10/19
 ![image](https://github.com/user-attachments/assets/683bd26f-47cd-4738-9762-ab817e053580)
 
-2024/10/20 how did we get here?
-![image](https://github.com/user-attachments/assets/0827aa44-8a68-4e72-bec4-2f5614e45b74)
+`24/10/23
+![image](https://github.com/user-attachments/assets/2289feae-a62e-4796-ab6e-0f30b15b0c00)
+
 
